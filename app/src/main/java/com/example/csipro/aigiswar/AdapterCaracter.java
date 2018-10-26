@@ -48,7 +48,7 @@ public class AdapterCaracter extends ArrayAdapter<Unidades> {
         txtName.setText(product.getName());
 
         TextView txtPrice = (TextView) convertView.findViewById(R.id.txtPrice);
-        txtPrice.setText(product.getPrice());
+        txtPrice.setText(product.getClas());
 
         return convertView;
     }

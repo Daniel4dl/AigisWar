@@ -5,27 +5,27 @@ import java.io.Serializable;
 public class Unidades implements Serializable {
     private String image;
     private String name;
-    private String price;
+    private String Clas;
     private String rare;
     private String Id;
     private String Perfil;
     public Unidades(String image, String name, String Class,String id) {
         this.image = image;
         this.name = name;
-        this.price = Class;
+        this.Clas = Class;
         this.Id = id;
     }
 
      public Unidades(String image, String name, String price,String id,String perfil) {
         this.image = image;
         this.name = name;
-        this.price = price;
+        this.Clas = price;
         this.Id=id;
         this.Perfil=perfil;
     } public Unidades(String image, String name, String price) {
         this.image = image;
         this.name = name;
-        this.price = price;
+        this.Clas = price;
 
     }
 
@@ -45,12 +45,12 @@ public class Unidades implements Serializable {
         this.name = name;
     }
 
-    public String getPrice() {
-        return price;
+    public String getClas() {
+        return Clas;
     }
 
     public void setPrice(String price) {
-        this.price = price;
+        this.Clas = price;
     }
 
     public String getRare() {

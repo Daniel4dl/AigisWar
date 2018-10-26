@@ -33,6 +33,7 @@ public class DetalleSilver extends AppCompatActivity {
     TextView minb;
     TextView Banusmax;
     TextView nombre;
+    TextView class1;
 
     int i = 0;
 
@@ -55,10 +56,12 @@ public class DetalleSilver extends AppCompatActivity {
         hpm = findViewById(R.id.hpmax);
         atkm = findViewById(R.id.actkm);
         defm = findViewById(R.id.defm);
+        class1=findViewById(R.id.class1);
 
 
         Unidades obj = (Unidades) getIntent().getExtras().getSerializable("objecto");
         i = obj.getId();
+        class1.setText(obj.getClas());
 
         runOnUiThread(new Runnable() {
             @Override
