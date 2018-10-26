@@ -97,9 +97,8 @@ public class DetalleSilver extends AppCompatActivity {
                 minb.setText(productObject.getString("Min"));
                 Banusmax.setText(productObject.getString("Banus"));
                 Picasso.with(null).load(productObject.getString("img")).into(Perfil);
-
                 productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(1);
-                inicialm.setText(productObject.getString("inicial"));
+                inicialm.setText(productObject.getString("LvMax"));
                 hpm.setText(productObject.getString("Hp"));
                 atkm.setText(productObject.getString("Atk"));
                 defm.setText(productObject.getString("Def"));
