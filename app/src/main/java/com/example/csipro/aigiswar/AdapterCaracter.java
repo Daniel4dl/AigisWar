@@ -44,11 +44,9 @@ public class AdapterCaracter extends ArrayAdapter<Unidades> {
         ImageView imageView = (ImageView) convertView.findViewById(R.id.imageViewProduct);
         Picasso.with(context).load(product.getImage()).into(imageView);
 
-        TextView txtName = (TextView) convertView.findViewById(R.id.txtName);
+        TextView txtName = (TextView) convertView.findViewById(R.id.Nombre);
         txtName.setText(product.getName());
 
-        TextView txtPrice = (TextView) convertView.findViewById(R.id.txtPrice);
-        txtPrice.setText(product.getClas());
 
         return convertView;
     }
