@@ -3,6 +3,7 @@ package com.example.csipro.aigiswar;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,7 +41,7 @@ public class DetalleSilver extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.table);
+        setContentView(R.layout.pesonaje);
         Perfil = findViewById(R.id.foto);
         nombre = (TextView) findViewById(R.id.txtname);
         inicial = findViewById(R.id.lv1);

@@ -1,49 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:background="@color/fondo"
-    android:layout_height="match_parent"
-    android:layout_weight="1"
+    android:layout_height="match_parent">
 
-    android:id="@+id/layoutTabla"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-
-    <TextView
-        android:id="@+id/txtname"
-        android:textColor="@color/white"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Name"
-        android:textSize="25dp" />
+        android:layout_height="760px">
+
+        <TextView
+            android:id="@+id/txtname"
+            android:layout_width="500px"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Name"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            app:layout_constraintBottom_toTopOf="@+id/foto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/class1"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        android:text="Class"/>
+        <TextView
 
-    <ImageView
-        android:id="@+id/foto"
-        android:layout_width="167dp"
-        android:layout_height="306dp"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/p" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:textSize="8dp"
-        android:layout_height="wrap_content" />
-    <ScrollView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+            android:id="@+id/class1"
+            android:layout_width="500px"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:text="Class"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/foto" />
+
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="167dp"
+            android:layout_height="306dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/p"
+            tools:ignore="MissingConstraints" />
+
+    </android.support.constraint.ConstraintLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -85,7 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center"
-android:background="@color/gray"
+                android:background="@color/gray"
                 android:textColor="@color/white"
                 android:text="Lv1" />
 
@@ -107,7 +129,7 @@ android:background="@color/gray"
 
             <TextView
                 android:id="@+id/textView23"
- android:background="@color/dimegra"
+                android:background="@color/dimegra"
                 android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="38.5dp"
@@ -311,19 +333,19 @@ android:background="@color/gray"
                 android:layout_height="100dp"
                 android:orientation="horizontal">
                 <TextView
-                android:layout_width="70px"
-                android:gravity="center"
-                android:id="@+id/max"
+                    android:layout_width="70px"
+                    android:gravity="center"
+                    android:id="@+id/max"
                     android:textColor="@color/white"
                     android:layout_height="match_parent"
-                android:text="Max"/>
+                    android:text="Max"/>
                 <TextView
-                android:layout_width="70px"
-                android:gravity="center"
-                android:id="@+id/min"
+                    android:layout_width="70px"
+                    android:gravity="center"
+                    android:id="@+id/min"
                     android:textColor="@color/white"
-                android:text="Min"
-                android:layout_height="match_parent" />
+                    android:text="Min"
+                    android:layout_height="match_parent" />
 
 
             </LinearLayout>
@@ -356,6 +378,4 @@ android:background="@color/gray"
         </LinearLayout>
 
     </LinearLayout>
-    </ScrollView>
-
 </LinearLayout>
