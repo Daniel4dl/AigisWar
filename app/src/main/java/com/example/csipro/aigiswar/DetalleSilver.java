@@ -3,6 +3,7 @@ package com.example.csipro.aigiswar;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -60,6 +61,7 @@ public class DetalleSilver extends AppCompatActivity {
         class1=findViewById(R.id.class1);
 
 
+
         Unidades obj = (Unidades) getIntent().getExtras().getSerializable("objecto");
         i = obj.getId();
         class1.setText(obj.getClas());
@@ -70,10 +72,12 @@ public class DetalleSilver extends AppCompatActivity {
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
             }
         });
-        nombre.setText(obj.getName());
+
+
 
 
     }
+
 
     class ReadJSON extends AsyncTask<String, Integer, String> {
 
