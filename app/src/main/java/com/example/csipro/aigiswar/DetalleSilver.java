@@ -64,6 +64,7 @@ public class DetalleSilver extends AppCompatActivity {
 
         Unidades obj = (Unidades) getIntent().getExtras().getSerializable("objecto");
         i = obj.getId();
+        nombre.setText(obj.getName());
         class1.setText(obj.getClas());
 
         runOnUiThread(new Runnable() {
