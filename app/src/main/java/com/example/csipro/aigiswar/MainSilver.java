@@ -59,10 +59,7 @@ public class MainSilver extends AppCompatActivity {
 
 
     }
-    public void Agregar(View v){
-        Button button=(Button)v;
-        ((Button)v).setText("hola");
-    }
+
 
 
 

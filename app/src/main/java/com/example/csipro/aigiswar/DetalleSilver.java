@@ -1,8 +1,10 @@
 package com.example.csipro.aigiswar;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,7 +17,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -36,6 +41,8 @@ public class DetalleSilver extends AppCompatActivity {
     TextView Banusmax;
     TextView nombre;
     TextView class1;
+    TextView Favorito;
+    Button add;
 
     int i = 0;
 
@@ -44,7 +51,7 @@ public class DetalleSilver extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pesonaje);
         Perfil = findViewById(R.id.foto);
-        nombre = (TextView) findViewById(R.id.txtname);
+Favorito=findViewById(R.id.Favorito);
         inicial = findViewById(R.id.lv1);
         atkb = findViewById(R.id.atkb);
         defb = findViewById(R.id.defb);
@@ -59,12 +66,12 @@ public class DetalleSilver extends AppCompatActivity {
         atkm = findViewById(R.id.actkm);
         defm = findViewById(R.id.defm);
         class1=findViewById(R.id.class1);
-
+        add=findViewById(R.id.Add);
 
 
         Unidades obj = (Unidades) getIntent().getExtras().getSerializable("objecto");
         i = obj.getId();
-        nombre.setText(obj.getName());
+
         class1.setText(obj.getClas());
 
         runOnUiThread(new Runnable() {
@@ -73,7 +80,13 @@ public class DetalleSilver extends AppCompatActivity {
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
             }
         });
-
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                add.setText("Favorito");
+                  
+            }
+        });
 
 
 
