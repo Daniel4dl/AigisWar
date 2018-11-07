@@ -82,10 +82,16 @@ public class MainSilver extends AppCompatActivity {
                             productObject.getString("foto"),
                             productObject.getString("nombre"),
                             productObject.getString("clase"),
-                            productObject.getString("id")
-                    ));
+                            productObject.getString("id"),productObject.optBoolean("favorito")));
+
+                    if(productObject.getString("nombre").equalsIgnoreCase("Picky")){
+                        ((JSONObject)jsonArray.get(i)).put("favorito",true);
+                    }
+
 
                 }
+
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

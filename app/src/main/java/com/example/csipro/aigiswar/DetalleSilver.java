@@ -23,8 +23,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashMap;
 
 public class DetalleSilver extends AppCompatActivity {
+
     ImageView Perfil;
     TextView inicial;
     TextView inicialm;
@@ -43,11 +45,12 @@ public class DetalleSilver extends AppCompatActivity {
     TextView class1;
     TextView Favorito;
     Button add;
-
+     boolean favorito;
     int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        HashMap<String, Integer> map = new HashMap<>();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pesonaje);
         Perfil = findViewById(R.id.foto);
@@ -69,9 +72,10 @@ Favorito=findViewById(R.id.Favorito);
         add=findViewById(R.id.Add);
 
 
+
         Unidades obj = (Unidades) getIntent().getExtras().getSerializable("objecto");
         i = obj.getId();
-
+        favorito=obj.getFav();
         class1.setText(obj.getClas());
 
         runOnUiThread(new Runnable() {
@@ -80,13 +84,20 @@ Favorito=findViewById(R.id.Favorito);
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
             }
         });
+       if (favorito){
+      add.setText("true");
+      }else {
+      add.setText("false");
+       }
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 add.setText("Favorito");
-                  
+
             }
         });
+
 
 
 

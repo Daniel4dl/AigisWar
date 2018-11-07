@@ -9,11 +9,20 @@ public class Unidades implements Serializable {
     private String rare;
     private String Id;
     private String Perfil;
+    private  Boolean Favorito;
+    public Unidades(String image, String name, String Class,String id,Boolean favorito) {
+        this.image = image;
+        this.name = name;
+        this.Clas = Class;
+        this.Id = id;
+        this.Favorito=favorito;
+    }
     public Unidades(String image, String name, String Class,String id) {
         this.image = image;
         this.name = name;
         this.Clas = Class;
         this.Id = id;
+
     }
 
      public Unidades(String image, String name, String price,String id,String perfil) {
@@ -67,5 +76,8 @@ public class Unidades implements Serializable {
 
     public int getId() {
         return Integer.parseInt(Id);
+    }
+    public boolean getFav(){
+        return Favorito;
     }
 }
