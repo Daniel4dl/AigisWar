@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
+
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -46,7 +46,6 @@ public class MainSilver extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Unidades obj = (Unidades) parent.getItemAtPosition(position);
-
                 Intent paso = new Intent(getApplicationContext(), DetalleSilver.class);
 
                 paso.putExtra("objecto", (Serializable) obj);
@@ -84,9 +83,6 @@ public class MainSilver extends AppCompatActivity {
                             productObject.getString("clase"),
                             productObject.getString("id"),productObject.optBoolean("favorito")));
 
-                    if(productObject.getString("nombre").equalsIgnoreCase("Picky")){
-                        ((JSONObject)jsonArray.get(i)).put("favorito",true);
-                    }
 
 
                 }

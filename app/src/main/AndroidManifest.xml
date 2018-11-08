@@ -22,6 +22,7 @@
         <activity android:name=".MainBlack"></activity>
         <activity android:name=".DetalleSilver"></activity>
         <activity android:name=".MainPlatino"></activity>
+        <activity android:name=".silverclass"></activity>
     </application>
 
 </manifest>
