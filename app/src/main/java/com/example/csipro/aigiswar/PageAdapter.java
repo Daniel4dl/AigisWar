@@ -26,6 +26,13 @@ public class PageAdapter extends FragmentPagerAdapter  {
                 return new Class2();
             case 0:
                 return new Class1();
+
+                case 2:
+                    return new Class3();
+            case 3:
+                return new Class4();
+            case 4:
+                return new Class5();
             default:
                 return null;
         }

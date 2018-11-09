@@ -39,13 +39,13 @@ public class MainRareza extends AppCompatActivity {
                 Intent intent = null;
                 switch(position){
 
-                    case 2:
+                    case 0:
                         intent = new Intent(MainRareza.this,MainSilver.class);
                         break;
-                    case 4:
+                    case 3:
                         intent=new Intent(MainRareza.this,MainPlatino.class);
                         break;
-                    case 5:
+                    case 4:
                         intent = new Intent(MainRareza.this,MainBlack.class);
                         break;
                 }
@@ -85,13 +85,16 @@ public class MainRareza extends AppCompatActivity {
         Intent intent = null;
         switch(position){
 
-            case 2:
+            case 0:
                 intent = new Intent(MainRareza.this,MainSilver.class);
                 break;
-            case 4:
+            case 1:
                 intent = new Intent(MainRareza.this,MainPlatino.class);
                 break;
-            case 5:
+            case 2:
+                intent = new Intent(MainRareza.this,MainPlatino.class);
+                break;
+            case 3:
                 intent = new Intent(MainRareza.this,MainBlack.class);
                 break;
         }

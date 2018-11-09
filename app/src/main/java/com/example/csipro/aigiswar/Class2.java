@@ -75,9 +75,9 @@ public class Class2 extends Fragment {
         add=root.findViewById(R.id.Add);
         Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
         class1.setText(obj.getName());
-        i=obj.getId();
+        /*i=obj.getId();
 
-        new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
+        new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");*/
         return root;
     }
 

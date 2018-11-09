@@ -19,35 +19,46 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
-public class MainPlatino extends AppCompatActivity {
+public class MainGold extends AppCompatActivity {
     ArrayList<Unidades> arrayList;
+    ArrayList foto;
     ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         arrayList = new ArrayList<>();
         lv = (ListView) findViewById(R.id.listView);
 
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/platino.js");
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
             }
         });
+
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Unidades obj=(Unidades) parent.getItemAtPosition(position);
+                Unidades obj = (Unidades) parent.getItemAtPosition(position);
+                Intent paso = new Intent(getApplicationContext(), MenuGold.class);
 
-                Intent paso=new Intent(getApplicationContext(),MenuPlatino.class);
-                paso.putExtra("objecto",(Serializable)obj);
+                paso.putExtra("objecto", (Serializable) obj);
+
                 startActivity(paso);
 
             }
         });
+
+
+
     }
+
+
+
 
     class ReadJSON extends AsyncTask<String, Integer, String> {
 
@@ -60,18 +71,21 @@ public class MainPlatino extends AppCompatActivity {
         protected void onPostExecute(String content) {
             try {
                 JSONObject jsonObject = new JSONObject(content);
-                JSONArray jsonArray =  jsonObject.getJSONArray("caracerisicas");
+                JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
 
-                for(int i =0;i<jsonArray.length(); i++){
+                for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject productObject = jsonArray.getJSONObject(i);
                     arrayList.add(new Unidades(
                             productObject.getString("foto"),
                             productObject.getString("nombre"),
-                            productObject.getString("clase")
+                            productObject.getString("clase"),
+                            productObject.getString("id"),productObject.optBoolean("favorito")));
 
 
-                    ));
+
                 }
+
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -103,4 +117,6 @@ public class MainPlatino extends AppCompatActivity {
         }
         return content.toString();
     }
+
+
 }

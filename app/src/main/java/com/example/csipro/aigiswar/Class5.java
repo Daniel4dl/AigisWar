@@ -1,6 +1,5 @@
 package com.example.csipro.aigiswar;
 
-
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,8 +13,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,11 +22,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class Class1 extends Fragment {
+public class Class5 extends Fragment {
     ImageView Perfil;
     TextView inicial;
     TextView inicialm;
@@ -50,12 +43,11 @@ public class Class1 extends Fragment {
     Button add;
     boolean favorito;
     int i = 0;
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
+        setHasOptionsMenu(true);
         View root=inflater.inflate(R.layout.class1,container,false);
         Perfil =root. findViewById(R.id.foto);
         Favorito=root.findViewById(R.id.Favorito);
@@ -74,13 +66,14 @@ public class Class1 extends Fragment {
         defm = root.findViewById(R.id.defm);
         class1=root.findViewById(R.id.class1);
         add=root.findViewById(R.id.Add);
-        Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
-        class1.setText(obj.getClas());
-        /*i=obj.getId();
 
-      new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
-*/
-        setHasOptionsMenu(true);
+       /* Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
+        class1.setText(obj.getName());
+        i=obj.getId();
+
+        new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
+        */
+
         return root;
     }
 
@@ -92,7 +85,7 @@ public class Class1 extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-    return true;
+        return true;
     }
     class ReadJSON extends AsyncTask<String, Integer, String> {
 
@@ -108,7 +101,7 @@ public class Class1 extends Fragment {
                 JSONObject jsonObject = new JSONObject(content);
                 JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
 
-                JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(0);
+                JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(0);
 
                 inicial.setText(productObject.getString("inicial"));
                 hpb.setText(productObject.getString("Hp"));
@@ -119,8 +112,7 @@ public class Class1 extends Fragment {
                 max.setText(productObject.getString("Max"));
                 minb.setText(productObject.getString("Min"));
                 Banusmax.setText(productObject.getString("Banus"));
-                Picasso.with(null).load(productObject.getString("img")).into(Perfil);
-                productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(1);
+                productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(1);
                 inicialm.setText(productObject.getString("LvMax"));
                 hpm.setText(productObject.getString("Hp"));
                 atkm.setText(productObject.getString("Atk"));
@@ -156,4 +148,3 @@ public class Class1 extends Fragment {
         return content.toString();
     }
 }
-

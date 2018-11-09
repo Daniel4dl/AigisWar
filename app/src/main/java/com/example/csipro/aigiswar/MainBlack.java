@@ -41,7 +41,7 @@ public class MainBlack extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Unidades obj=(Unidades) parent.getItemAtPosition(position);
 
-                Intent paso=new Intent(getApplicationContext(),DetalleSilver.class);
+                Intent paso=new Intent(getApplicationContext(),MenuBlack.class);
                 paso.putExtra("objecto",(Serializable)obj);
                 startActivity(paso);
 
