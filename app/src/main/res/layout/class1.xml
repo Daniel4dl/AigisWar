@@ -18,28 +18,10 @@
             android:layout_height="330dp">
 
 
-            <TextView
-
-                android:id="@+id/class1"
-                android:layout_width="500px"
-                android:layout_height="40dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:gravity="center"
-                android:text="nombre"
-                android:textColor="@color/white"
-                android:textSize="28dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/foto"
-                android:layout_width="168dp"
-                android:layout_height="278dp"
+                android:layout_width="wrap_content"
+                android:layout_height="385dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -51,6 +33,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.929"
                 app:srcCompat="@drawable/p"
                 tools:ignore="MissingConstraints" />
 
@@ -280,19 +263,19 @@
 
             <LinearLayout
                 android:id="@+id/cost"
-                android:background="@color/gray"
                 android:layout_width="67dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView30"
-                    android:background="@color/dimegra"
-                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="37px"
+                    android:background="@color/dimegra"
                     android:gravity="center"
-                    android:text="Cost" />
+                    android:text="Cost"
+                    android:textColor="@color/white" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -300,22 +283,22 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:background="@color/dimegra"
-                        android:textColor="@color/white"
                         android:id="@+id/textView32"
                         android:layout_width="35dp"
                         android:layout_height="40px"
+                        android:background="@color/dimegra"
                         android:gravity="center"
-                        android:text="Max" />
+                        android:text="Max"
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/tc1"
-                        android:background="@color/dimegra"
-                        android:textColor="@color/white"
                         android:layout_width="35dp"
                         android:layout_height="40px"
+                        android:background="@color/dimegra"
                         android:gravity="center"
-                        android:text="Min" />
+                        android:text="Min"
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -324,20 +307,20 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="70px"
-                        android:gravity="center"
                         android:id="@+id/max"
-                        android:textColor="@color/white"
+                        android:layout_width="70px"
                         android:layout_height="match_parent"
-                        android:text="Max" />
+                        android:gravity="center"
+                        android:text="Max"
+                        android:textColor="@color/white" />
 
                     <TextView
-                        android:layout_width="70px"
-                        android:gravity="center"
                         android:id="@+id/min"
-                        android:textColor="@color/white"
+                        android:layout_width="70px"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="Min"
-                        android:layout_height="match_parent" />
+                        android:textColor="@color/white" />
 
 
                 </LinearLayout>

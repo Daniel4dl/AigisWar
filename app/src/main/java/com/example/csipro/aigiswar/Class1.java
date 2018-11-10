@@ -75,11 +75,25 @@ public class Class1 extends Fragment {
         class1=root.findViewById(R.id.class1);
         add=root.findViewById(R.id.Add);
         Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
-        class1.setText(obj.getClas());
-        /*i=obj.getId();
 
-      new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
-*/
+        i=obj.getId();
+
+        switch (obj.getRare()){
+            case "Oro":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/gold.js");
+                break;
+            case "Plata":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
+                break;
+            case "Platino":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/platino.js");
+                break;
+            case "Black":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/black.js");
+                break;
+       }
+
+
         setHasOptionsMenu(true);
         return root;
     }

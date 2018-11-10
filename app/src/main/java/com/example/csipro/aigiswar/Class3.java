@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -64,15 +66,26 @@ public class Class3 extends Fragment {
         hpm = root.findViewById(R.id.hpmax);
         atkm = root.findViewById(R.id.actkm);
         defm = root.findViewById(R.id.defm);
-        class1=root.findViewById(R.id.class1);
+
         add=root.findViewById(R.id.Add);
 
-       /* Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
-        class1.setText(obj.getName());
+        Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
+
         i=obj.getId();
 
-        new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
-        */
+        switch (obj.getRare()){
+            case "Oro":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/gold.js");
+                break;
+
+            case "Platino":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/platino.js");
+                break;
+            case "Black":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/black.js");
+                break;
+        }
+
 
         return root;
     }
@@ -101,7 +114,7 @@ public class Class3 extends Fragment {
                 JSONObject jsonObject = new JSONObject(content);
                 JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
 
-                JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(0);
+                JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class3").getJSONObject(0);
 
                 inicial.setText(productObject.getString("inicial"));
                 hpb.setText(productObject.getString("Hp"));
@@ -112,7 +125,8 @@ public class Class3 extends Fragment {
                 max.setText(productObject.getString("Max"));
                 minb.setText(productObject.getString("Min"));
                 Banusmax.setText(productObject.getString("Banus"));
-                productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(1);
+                Picasso.with(null).load(productObject.getString("img")).into(Perfil);
+                productObject = jsonArray.getJSONObject(i).getJSONArray("class3").getJSONObject(1);
                 inicialm.setText(productObject.getString("LvMax"));
                 hpm.setText(productObject.getString("Hp"));
                 atkm.setText(productObject.getString("Atk"));

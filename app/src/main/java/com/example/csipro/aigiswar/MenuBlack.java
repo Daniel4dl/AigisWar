@@ -25,13 +25,20 @@ public class MenuBlack extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         pageAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pageAdapter);
-
+         final Bundle datos=this.getIntent().getExtras();
+        final Unidades obj = (Unidades) getIntent().getExtras().getSerializable("objecto");
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-
+                switch (tab.getPosition()){
+                    case 0:
+                        tab.setText(obj.getClas());
+                        break;
+                    case 1:
+                      tab.setText(datos.getString("llave"));
+                }
             }
 
             @Override

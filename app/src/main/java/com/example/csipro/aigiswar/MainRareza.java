@@ -89,7 +89,7 @@ public class MainRareza extends AppCompatActivity {
                 intent = new Intent(MainRareza.this,MainSilver.class);
                 break;
             case 1:
-                intent = new Intent(MainRareza.this,MainPlatino.class);
+                intent = new Intent(MainRareza.this,MainGold.class);
                 break;
             case 2:
                 intent = new Intent(MainRareza.this,MainPlatino.class);

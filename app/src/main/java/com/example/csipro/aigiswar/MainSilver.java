@@ -46,7 +46,7 @@ public class MainSilver extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Unidades obj = (Unidades) parent.getItemAtPosition(position);
-                Intent paso = new Intent(getApplicationContext(), DetalleSilver.class);
+                Intent paso = new Intent(getApplicationContext(), MenuPlata.class);
 
                 paso.putExtra("objecto", (Serializable) obj);
 
@@ -81,7 +81,7 @@ public class MainSilver extends AppCompatActivity {
                             productObject.getString("foto"),
                             productObject.getString("nombre"),
                             productObject.getString("clase"),
-                            productObject.getString("id"),productObject.optBoolean("favorito")));
+                            productObject.getString("id"),productObject.optBoolean("favorito"),productObject.getString("rareza")));
 
 
 

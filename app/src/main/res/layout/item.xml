@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/Menu"
             android:layout_width="match_parent"
-            android:layout_height="114dp"
+            android:layout_height="wrap_content"
             app:srcCompat="@color/colorPrimaryDark" />
 
         <TextView
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white"
             android:textSize="30dp" />
     </LinearLayout>
 </LinearLayout>

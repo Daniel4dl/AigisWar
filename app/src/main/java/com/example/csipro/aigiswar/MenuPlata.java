@@ -27,7 +27,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
 
-public class DetalleSilver extends AppCompatActivity  {
+public class MenuPlata extends AppCompatActivity  {
 
     Toolbar toolbar;
     TabLayout tabLayout;
@@ -48,7 +48,7 @@ public class DetalleSilver extends AppCompatActivity  {
 
 
         tabLayout = findViewById(R.id.tablayout);
-
+        final Unidades obj = (Unidades) getIntent().getExtras().getSerializable("objecto");
 
 
         viewPager = findViewById(R.id.viewPager);
@@ -60,9 +60,13 @@ public class DetalleSilver extends AppCompatActivity  {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-
-
-
+                switch (tab.getPosition()){
+                    case 0:
+                        tab.setText(obj.getClas());
+                        break;
+                    case 1:
+                        tab.setText("1");
+                }
             }
 
             @Override

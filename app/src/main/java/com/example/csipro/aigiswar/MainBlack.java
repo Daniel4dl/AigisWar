@@ -67,9 +67,10 @@ public class MainBlack extends AppCompatActivity {
                     arrayList.add(new Unidades(
                             productObject.getString("foto"),
                             productObject.getString("nombre"),
-                            productObject.getString("clase")
+                            productObject.getString("clase"),
+                            productObject.getString("id"),
+                            productObject.getString("rareza")));
 
-                    ));
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

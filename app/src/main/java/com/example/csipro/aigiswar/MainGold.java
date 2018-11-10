@@ -36,7 +36,7 @@ public class MainGold extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/gold.js");
             }
         });
 
@@ -79,7 +79,7 @@ public class MainGold extends AppCompatActivity {
                             productObject.getString("foto"),
                             productObject.getString("nombre"),
                             productObject.getString("clase"),
-                            productObject.getString("id"),productObject.optBoolean("favorito")));
+                            productObject.getString("id"),productObject.getString("rareza")));
 
 
 

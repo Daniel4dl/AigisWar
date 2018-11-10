@@ -60,18 +60,23 @@ public class MainPlatino extends AppCompatActivity {
         protected void onPostExecute(String content) {
             try {
                 JSONObject jsonObject = new JSONObject(content);
-                JSONArray jsonArray =  jsonObject.getJSONArray("caracerisicas");
+                JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
 
-                for(int i =0;i<jsonArray.length(); i++){
+                for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject productObject = jsonArray.getJSONObject(i);
                     arrayList.add(new Unidades(
                             productObject.getString("foto"),
                             productObject.getString("nombre"),
-                            productObject.getString("clase")
+                            productObject.getString("clase"),
+                            productObject.getString("id"),
+                            productObject.getString("rareza")));
 
 
-                    ));
+
                 }
+
+
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

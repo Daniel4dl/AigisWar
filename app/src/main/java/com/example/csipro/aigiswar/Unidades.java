@@ -10,14 +10,16 @@ public class Unidades implements Serializable {
     private String Id;
     private String Perfil;
     private  Boolean Favorito;
-    public Unidades(String image, String name, String Class,String id,Boolean favorito) {
+    public Unidades(String image, String name, String Class,String id,Boolean favorito,String rare) {
+        this.rare=rare;
         this.image = image;
         this.name = name;
         this.Clas = Class;
         this.Id = id;
         this.Favorito=favorito;
     }
-    public Unidades(String image, String name, String Class,String id) {
+    public Unidades(String image, String name, String Class,String id,String rare) {
+        this.rare=rare;
         this.image = image;
         this.name = name;
         this.Clas = Class;
@@ -25,13 +27,7 @@ public class Unidades implements Serializable {
 
     }
 
-     public Unidades(String image, String name, String price,String id,String perfil) {
-        this.image = image;
-        this.name = name;
-        this.Clas = price;
-        this.Id=id;
-        this.Perfil=perfil;
-    } public Unidades(String image, String name, String price) {
+     public Unidades(String image, String name, String price) {
         this.image = image;
         this.name = name;
         this.Clas = price;

@@ -1,6 +1,7 @@
 package com.example.csipro.aigiswar;
 
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -71,13 +72,26 @@ public class Class2 extends Fragment {
         hpm = root.findViewById(R.id.hpmax);
         atkm = root.findViewById(R.id.actkm);
         defm = root.findViewById(R.id.defm);
-        class1=root.findViewById(R.id.class1);
+
         add=root.findViewById(R.id.Add);
         Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
-        class1.setText(obj.getName());
-        /*i=obj.getId();
 
-        new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");*/
+        i=obj.getId();
+
+        switch (obj.getRare()){
+            case "Oro":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/gold.js");
+                break;
+            case "Plata":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
+                break;
+            case "Platino":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/platino.js");
+                break;
+            case "Black":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/black.js");
+                break;
+        }
         return root;
     }
 
@@ -116,11 +130,14 @@ public class Class2 extends Fragment {
                 max.setText(productObject.getString("Max"));
                 minb.setText(productObject.getString("Min"));
                 Banusmax.setText(productObject.getString("Banus"));
+                Picasso.with(null).load(productObject.getString("img")).into(Perfil);
                 productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(1);
                 inicialm.setText(productObject.getString("LvMax"));
                 hpm.setText(productObject.getString("Hp"));
                 atkm.setText(productObject.getString("Atk"));
                 defm.setText(productObject.getString("Def"));
+
+
 
 
             } catch (JSONException e) {
