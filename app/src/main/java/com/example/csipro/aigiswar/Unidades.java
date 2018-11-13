@@ -10,6 +10,10 @@ public class Unidades implements Serializable {
     private String Id;
     private String Perfil;
     private  Boolean Favorito;
+    private String Clas2;
+    private String Clas3;
+    private String Clas4;
+    private String Clas5;
     public Unidades(String image, String name, String Class,String id,Boolean favorito,String rare) {
         this.rare=rare;
         this.image = image;
@@ -17,6 +21,27 @@ public class Unidades implements Serializable {
         this.Clas = Class;
         this.Id = id;
         this.Favorito=favorito;
+    }
+
+    public Unidades(String image, String name, String Class,String id,String rare,String clas2) {
+        this.rare=rare;
+        this.Clas2=clas2;
+        this.image = image;
+        this.name = name;
+        this.Clas = Class;
+        this.Id = id;
+
+    }
+    public Unidades(String image, String name, String Class,String id,String rare,String clas2,String clas3,String clas4) {
+        this.rare=rare;
+        this.Clas3=clas3;
+        this.Clas4=clas4;
+        this.Clas2=clas2;
+        this.image = image;
+        this.name = name;
+        this.Clas = Class;
+        this.Id = id;
+
     }
     public Unidades(String image, String name, String Class,String id,String rare) {
         this.rare=rare;
@@ -75,5 +100,25 @@ public class Unidades implements Serializable {
     }
     public boolean getFav(){
         return Favorito;
+    }
+
+    public Boolean getFavorito() {
+        return Favorito;
+    }
+
+    public String getClas2() {
+        return Clas2;
+    }
+
+    public String getClas3() {
+        return Clas3;
+    }
+
+    public String getClas4() {
+        return Clas4;
+    }
+
+    public String getClas5() {
+        return Clas5;
     }
 }

@@ -26,6 +26,11 @@ public class MenuPlatino extends AppCompatActivity {
         toolbar.setTitle(getResources().getString(R.string.app_name));
         setSupportActionBar(toolbar);
         tabLayout = findViewById(R.id.tablayout);
+        final Unidades obj = (Unidades) getIntent().getExtras().getSerializable("objecto");
+        tabLayout.getTabAt(0).setText(obj.getClas());
+        tabLayout.getTabAt(1).setText(obj.getClas2());
+        tabLayout.getTabAt(2).setText(obj.getClas3());
+        tabLayout.getTabAt(3).setText(obj.getClas4());
         viewPager = findViewById(R.id.viewPager);
         pageAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pageAdapter);

@@ -69,7 +69,10 @@ public class MainPlatino extends AppCompatActivity {
                             productObject.getString("nombre"),
                             productObject.getString("clase"),
                             productObject.getString("id"),
-                            productObject.getString("rareza")));
+                            productObject.getString("rareza"),
+                            productObject.getJSONArray("class2").getJSONObject(0).getString("clase"),
+                            productObject.getJSONArray("class3").getJSONObject(0).getString("clase"),
+                            productObject.getJSONArray("class4").getJSONObject(0).getString("clase")));
 
 
 

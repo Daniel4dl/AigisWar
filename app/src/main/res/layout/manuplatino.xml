@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+       android:background="@color/fondo"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -19,33 +19,38 @@
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tablayout"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/fondo"
+        app:tabIndicatorColor="@color/fondo"
         app:tabSelectedTextColor="@android:color/white"
+        app:tabTextAppearance="@android:style/TextAppearance.WindowTitle"
         app:tabTextColor="@android:color/black">
 
         <android.support.design.widget.TabItem
             android:id="@+id/class1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+
+            android:layout_height="wrap_content" />
 
         <android.support.design.widget.TabItem
             android:id="@+id/class2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            />
+            android:textSize="100px" />
+
         <android.support.design.widget.TabItem
             android:id="@+id/class3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            />
+            android:textSize="100px" />
+
         <android.support.design.widget.TabItem
             android:id="@+id/class4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            />
+            android:textSize="100px" />
 
 
     </android.support.design.widget.TabLayout>

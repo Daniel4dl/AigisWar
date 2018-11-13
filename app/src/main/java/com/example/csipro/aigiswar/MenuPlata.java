@@ -46,11 +46,10 @@ public class MenuPlata extends AppCompatActivity  {
         toolbar.setTitle(getResources().getString(R.string.app_name));
         setSupportActionBar(toolbar);
 
-
         tabLayout = findViewById(R.id.tablayout);
         final Unidades obj = (Unidades) getIntent().getExtras().getSerializable("objecto");
-
-
+      tabLayout.getTabAt(0).setText(obj.getClas());
+      tabLayout.getTabAt(1).setText(obj.getClas2());
         viewPager = findViewById(R.id.viewPager);
         pageAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pageAdapter);
@@ -60,13 +59,7 @@ public class MenuPlata extends AppCompatActivity  {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-                switch (tab.getPosition()){
-                    case 0:
-                        tab.setText(obj.getClas());
-                        break;
-                    case 1:
-                        tab.setText("1");
-                }
+
             }
 
             @Override
