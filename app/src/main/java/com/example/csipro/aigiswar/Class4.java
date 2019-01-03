@@ -38,6 +38,7 @@ public class Class4 extends Fragment {
     TextView range;
     TextView max;
     TextView minb;
+    TextView Rm;
     TextView Banusmax;
     TextView nombre;
     TextView class1;
@@ -66,6 +67,7 @@ public class Class4 extends Fragment {
         hpm = root.findViewById(R.id.hpmax);
         atkm = root.findViewById(R.id.actkm);
         defm = root.findViewById(R.id.defm);
+        Rm=root.findViewById(R.id.Mr);
 
         add=root.findViewById(R.id.Add);
 
@@ -74,11 +76,11 @@ public class Class4 extends Fragment {
         i=obj.getId();
 
         switch (obj.getRare()){
-            case "Oro":
+            case "Gold":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/gold.js");
                 break;
 
-            case "Platino":
+            case "Platinum":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/platino.js");
                 break;
             case "Black":
@@ -120,16 +122,17 @@ public class Class4 extends Fragment {
                 atkb.setText(productObject.getString("Atk"));
                 defb.setText(productObject.getString("Def"));
                 blockB.setText(productObject.getString("Block"));
-                range.setText(productObject.getString("Range"));
+                Rm.setText(productObject.getString("MR"));
                 max.setText(productObject.getString("Max"));
                 minb.setText(productObject.getString("Min"));
-                Banusmax.setText(productObject.getString("Banus"));
+
                 Picasso.with(null).load(productObject.getString("img")).into(Perfil);
                 productObject = jsonArray.getJSONObject(i).getJSONArray("class4").getJSONObject(1);
                 inicialm.setText(productObject.getString("LvMax"));
                 hpm.setText(productObject.getString("Hp"));
                 atkm.setText(productObject.getString("Atk"));
                 defm.setText(productObject.getString("Def"));
+                range.setText(productObject.getString("Range"));
 
 
             } catch (JSONException e) {

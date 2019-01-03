@@ -48,6 +48,7 @@ public class Class2 extends Fragment {
     TextView nombre;
     TextView class1;
     TextView Favorito;
+    TextView Rm;
     Button add;
     boolean favorito;
     int i = 0;
@@ -72,6 +73,7 @@ public class Class2 extends Fragment {
         hpm = root.findViewById(R.id.hpmax);
         atkm = root.findViewById(R.id.actkm);
         defm = root.findViewById(R.id.defm);
+        Rm=root.findViewById(R.id.Mr);
 
         add=root.findViewById(R.id.Add);
         Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
@@ -79,13 +81,13 @@ public class Class2 extends Fragment {
         i=obj.getId();
 
         switch (obj.getRare()){
-            case "Oro":
+            case "Gold":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/gold.js");
                 break;
             case "Plata":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
                 break;
-            case "Platino":
+            case "Platinum":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/platino.js");
                 break;
             case "Black":
@@ -126,7 +128,8 @@ public class Class2 extends Fragment {
                 atkb.setText(productObject.getString("Atk"));
                 defb.setText(productObject.getString("Def"));
                 blockB.setText(productObject.getString("Block"));
-                range.setText(productObject.getString("Range"));
+                Rm.setText(productObject.getString("MR"));
+
                 max.setText(productObject.getString("Max"));
                 minb.setText(productObject.getString("Min"));
                 Banusmax.setText(productObject.getString("Banus"));
@@ -136,6 +139,7 @@ public class Class2 extends Fragment {
                 hpm.setText(productObject.getString("Hp"));
                 atkm.setText(productObject.getString("Atk"));
                 defm.setText(productObject.getString("Def"));
+range.setText(productObject.getString("Range"));
 
 
 
