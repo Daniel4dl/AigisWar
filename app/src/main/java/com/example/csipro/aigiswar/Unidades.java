@@ -43,6 +43,18 @@ public class Unidades implements Serializable {
         this.Id = id;
 
     }
+    public Unidades(String image, String name, String Class,String id,String rare,String clas2,String clas3,String clas4, String clas5) {
+        this.rare=rare;
+        this.Clas3=clas3;
+        this.Clas4=clas4;
+        this.Clas2=clas2;
+        this.image = image;
+        this.name = name;
+        this.Clas = Class;
+        this.Id = id;
+        this.Clas5=clas5;
+
+    }
     public Unidades(String image, String name, String Class,String id,String rare) {
         this.rare=rare;
         this.image = image;

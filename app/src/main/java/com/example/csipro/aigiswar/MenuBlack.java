@@ -30,6 +30,7 @@ public class MenuBlack extends AppCompatActivity {
         tabLayout.getTabAt(1).setText(obj.getClas2());
         tabLayout.getTabAt(2).setText(obj.getClas3());
         tabLayout.getTabAt(3).setText(obj.getClas4());
+        tabLayout.getTabAt(4).setText(obj.getClas5());
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

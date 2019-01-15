@@ -1,7 +1,6 @@
 package com.example.csipro.aigiswar;
 
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -48,14 +47,17 @@ public class Class2 extends Fragment {
     TextView nombre;
     TextView class1;
     TextView Favorito;
+    TextView MR;
     Button add;
+    TextView Banus;
     boolean favorito;
     int i = 0;
+    String clase;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        setHasOptionsMenu(true);
+
         View root=inflater.inflate(R.layout.class1,container,false);
         Perfil =root. findViewById(R.id.foto);
         Favorito=root.findViewById(R.id.Favorito);
@@ -67,31 +69,35 @@ public class Class2 extends Fragment {
         hpb = root.findViewById(R.id.hpb);
         max = root.findViewById(R.id.max);
         minb = root.findViewById(R.id.min);
+        Banus=root.findViewById(R.id.banus);
+
         Banusmax = root.findViewById(R.id.banusmax);
         inicialm = root.findViewById(R.id.lv55);
         hpm = root.findViewById(R.id.hpmax);
         atkm = root.findViewById(R.id.actkm);
         defm = root.findViewById(R.id.defm);
-
+        class1=root.findViewById(R.id.class1);
         add=root.findViewById(R.id.Add);
+        MR=root.findViewById(R.id.Mr);
         Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
-
+        clase=obj.getRare();
         i=obj.getId();
 
-        switch (obj.getRare()){
-            case "Oro":
+        switch (clase){
+            case "Gold":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/gold.js");
                 break;
-            case "Plata":
-                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
-                break;
-            case "Platino":
+
+            case "Platinum":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/platino.js");
                 break;
             case "Black":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/black.js");
                 break;
         }
+
+
+        setHasOptionsMenu(true);
         return root;
     }
 
@@ -114,36 +120,67 @@ public class Class2 extends Fragment {
 
         @Override
         protected void onPostExecute(String content) {
+            if (clase.equals("Gold")) {
+                try {
+                    JSONObject jsonObject = new JSONObject(content);
+                    JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
 
-            try {
-                JSONObject jsonObject = new JSONObject(content);
-                JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
+                    JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(0);
 
-                JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(0);
-
-                inicial.setText(productObject.getString("inicial"));
-                hpb.setText(productObject.getString("Hp"));
-                atkb.setText(productObject.getString("Atk"));
-                defb.setText(productObject.getString("Def"));
-                blockB.setText(productObject.getString("Block"));
-                range.setText(productObject.getString("Range"));
-                max.setText(productObject.getString("Max"));
-                minb.setText(productObject.getString("Min"));
-                Banusmax.setText(productObject.getString("Banus"));
-                Picasso.with(null).load(productObject.getString("img")).into(Perfil);
-                productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(1);
-                inicialm.setText(productObject.getString("LvMax"));
-                hpm.setText(productObject.getString("Hp"));
-                atkm.setText(productObject.getString("Atk"));
-                defm.setText(productObject.getString("Def"));
+                    inicial.setText(productObject.getString("inicial"));
+                    hpb.setText(productObject.getString("Hp"));
+                    atkb.setText(productObject.getString("Atk"));
+                    defb.setText(productObject.getString("Def"));
+                    blockB.setText(productObject.getString("Block"));
+                    MR.setText(productObject.getString("MR"));
+                    max.setText(productObject.getString("Max"));
+                    minb.setText(productObject.getString("Min"));
+                    Banus.setText(productObject.getString("Banus"));
+                    Picasso.with(null).load(productObject.getString("img")).into(Perfil);
+                    productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(1);
+                    inicialm.setText(productObject.getString("LvMax"));
+                    hpm.setText(productObject.getString("Hp"));
+                    atkm.setText(productObject.getString("Atk"));
+                    defm.setText(productObject.getString("Def"));
+                    range.setText(productObject.getString("Range"));
 
 
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }else {
+                try {
+                    JSONObject jsonObject = new JSONObject(content);
+                    JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
+
+                    JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(0);
+
+                    inicial.setText(productObject.getString("inicial"));
+                    hpb.setText(productObject.getString("Hp"));
+                    atkb.setText(productObject.getString("Atk"));
+                    defb.setText(productObject.getString("Def"));
+                    blockB.setText(productObject.getString("Block"));
+                    max.setText(productObject.getString("Max"));
+                    minb.setText(productObject.getString("Min"));
+                    Banusmax.setText(productObject.getString("BanusEx"));
+                    MR.setText(productObject.getString("MR"));
+
+                    Banus.setText(productObject.getString("Banus"));
+                    Picasso.with(null).load(productObject.getString("img")).into(Perfil);
+                    productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(1);
+                    inicialm.setText(productObject.getString("LvMax"));
+                    hpm.setText(productObject.getString("Hp"));
+                    atkm.setText(productObject.getString("Atk"));
+                    defm.setText(productObject.getString("Def"));
+                    range.setText(productObject.getString("Range"));
 
 
-            } catch (JSONException e) {
-                e.printStackTrace();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
-
         }
     }
 
@@ -169,3 +206,4 @@ public class Class2 extends Fragment {
         return content.toString();
     }
 }
+

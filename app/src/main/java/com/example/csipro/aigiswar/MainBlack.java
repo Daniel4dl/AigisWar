@@ -72,7 +72,9 @@ public class MainBlack extends AppCompatActivity {
                             productObject.getString("rareza"),
                             productObject.getJSONArray("class2").getJSONObject(0).getString("clase"),
                             productObject.getJSONArray("class3").getJSONObject(0).getString("clase"),
-                            productObject.getJSONArray("class4").getJSONObject(0).getString("clase")));
+                            productObject.getJSONArray("class4").getJSONObject(0).getString("clase"),
+                            productObject.getJSONArray("class5").getJSONObject(0).getString("clase")));
+
 
                 }
             } catch (JSONException e) {
