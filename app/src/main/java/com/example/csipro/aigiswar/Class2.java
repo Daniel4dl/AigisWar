@@ -47,7 +47,11 @@ public class Class2 extends Fragment {
     TextView nombre;
     TextView class1;
     TextView Favorito;
+<<<<<<< HEAD
     TextView MR;
+=======
+    TextView Rm;
+>>>>>>> 48359499da3de8f5138d320ca40b44c167d6ed06
     Button add;
     TextView Banus;
     boolean favorito;
@@ -76,18 +80,33 @@ public class Class2 extends Fragment {
         hpm = root.findViewById(R.id.hpmax);
         atkm = root.findViewById(R.id.actkm);
         defm = root.findViewById(R.id.defm);
+<<<<<<< HEAD
         class1=root.findViewById(R.id.class1);
+=======
+        Rm=root.findViewById(R.id.Mr);
+
+>>>>>>> 48359499da3de8f5138d320ca40b44c167d6ed06
         add=root.findViewById(R.id.Add);
         MR=root.findViewById(R.id.Mr);
         Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
         clase=obj.getRare();
         i=obj.getId();
 
+<<<<<<< HEAD
         switch (clase){
             case "Gold":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/gold.js");
                 break;
 
+=======
+        switch (obj.getRare()){
+            case "Gold":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/gold.js");
+                break;
+            case "Plata":
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
+                break;
+>>>>>>> 48359499da3de8f5138d320ca40b44c167d6ed06
             case "Platinum":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/platino.js");
                 break;
@@ -180,6 +199,38 @@ public class Class2 extends Fragment {
                     e.printStackTrace();
                 }
 
+<<<<<<< HEAD
+=======
+            try {
+                JSONObject jsonObject = new JSONObject(content);
+                JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
+
+                JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(0);
+
+                inicial.setText(productObject.getString("inicial"));
+                hpb.setText(productObject.getString("Hp"));
+                atkb.setText(productObject.getString("Atk"));
+                defb.setText(productObject.getString("Def"));
+                blockB.setText(productObject.getString("Block"));
+                Rm.setText(productObject.getString("MR"));
+
+                max.setText(productObject.getString("Max"));
+                minb.setText(productObject.getString("Min"));
+                Banusmax.setText(productObject.getString("Banus"));
+                Picasso.with(null).load(productObject.getString("img")).into(Perfil);
+                productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(1);
+                inicialm.setText(productObject.getString("LvMax"));
+                hpm.setText(productObject.getString("Hp"));
+                atkm.setText(productObject.getString("Atk"));
+                defm.setText(productObject.getString("Def"));
+range.setText(productObject.getString("Range"));
+
+
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+>>>>>>> 48359499da3de8f5138d320ca40b44c167d6ed06
             }
         }
     }
