@@ -18,45 +18,26 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
-
-public class MainActivity extends AppCompatActivity {
-
+public class MainMission extends AppCompatActivity {
     ArrayList<inicio> arrayList;
     ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inicio);
         arrayList = new ArrayList<>();
         lv = (ListView) findViewById(R.id.listView);
 
+
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/inicio.js");
-            }
-        });
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Intent intent = null;
-                switch (position) {
-
-                    case 0:
-                        intent = new Intent(MainActivity.this, MainRareza.class);
-                        break;
-                    case 1:
-                        intent = new Intent(MainActivity.this, MainMission.class);
-                        break;
-                }
-                startActivity(intent);
+                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/misiones.js");
             }
         });
     }
-
-
     class ReadJSON extends AsyncTask<String, Integer, String> {
 
         @Override
@@ -68,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String content) {
             try {
                 JSONObject jsonObject = new JSONObject(content);
-                JSONArray jsonArray = jsonObject.getJSONArray("inicio");
+                JSONArray jsonArray = jsonObject.getJSONArray("misiones");
 
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject productObject = jsonArray.getJSONObject(i);

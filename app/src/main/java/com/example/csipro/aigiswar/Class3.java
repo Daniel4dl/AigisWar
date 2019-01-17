@@ -45,26 +45,23 @@ public class Class3 extends Fragment {
     TextView minb;
     TextView Banusmax;
     TextView nombre;
+    TextView Mr;
     TextView class1;
     TextView Favorito;
-<<<<<<< HEAD
-    TextView MR;
-=======
-    TextView Rm;
->>>>>>> 48359499da3de8f5138d320ca40b44c167d6ed06
-    Button add;
+    String clase;
     TextView Banus;
+    Button add;
     boolean favorito;
     int i = 0;
-    String clase;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View root=inflater.inflate(R.layout.class1,container,false);
-        Perfil =root. findViewById(R.id.foto);
-        Favorito=root.findViewById(R.id.Favorito);
+        View root = inflater.inflate(R.layout.class1, container, false);
+        Perfil = root.findViewById(R.id.foto);
+        Favorito = root.findViewById(R.id.Favorito);
         inicial = root.findViewById(R.id.lv1);
         atkb = root.findViewById(R.id.atkb);
         defb = root.findViewById(R.id.defb);
@@ -78,24 +75,15 @@ public class Class3 extends Fragment {
         hpm = root.findViewById(R.id.hpmax);
         atkm = root.findViewById(R.id.actkm);
         defm = root.findViewById(R.id.defm);
-<<<<<<< HEAD
+        class1 = root.findViewById(R.id.class1);
+        add = root.findViewById(R.id.Add);
+        Mr = root.findViewById(R.id.Mr);
         Banus=root.findViewById(R.id.banus);
-        class1=root.findViewById(R.id.class1);
-=======
-        Rm=root.findViewById(R.id.Mr);
-
->>>>>>> 48359499da3de8f5138d320ca40b44c167d6ed06
-        add=root.findViewById(R.id.Add);
-        MR=root.findViewById(R.id.Mr);
         Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
-        clase=obj.getRare();
-        i=obj.getId();
+        i = obj.getId();
+        clase = obj.getRare();
 
-<<<<<<< HEAD
-        switch (clase){
-=======
-        switch (obj.getRare()){
->>>>>>> 48359499da3de8f5138d320ca40b44c167d6ed06
+        switch (clase) {
             case "Gold":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/gold.js");
                 break;
@@ -123,6 +111,7 @@ public class Class3 extends Fragment {
 
         return true;
     }
+
     class ReadJSON extends AsyncTask<String, Integer, String> {
 
         @Override
@@ -132,6 +121,7 @@ public class Class3 extends Fragment {
 
         @Override
         protected void onPostExecute(String content) {
+
             if (clase.equals("Gold")) {
                 try {
                     JSONObject jsonObject = new JSONObject(content);
@@ -144,7 +134,7 @@ public class Class3 extends Fragment {
                     atkb.setText(productObject.getString("Atk"));
                     defb.setText(productObject.getString("Def"));
                     blockB.setText(productObject.getString("Block"));
-                    MR.setText(productObject.getString("MR"));
+                    Mr.setText(productObject.getString("MR"));
                     max.setText(productObject.getString("Max"));
                     minb.setText(productObject.getString("Min"));
                     Banus.setText(productObject.getString("Banus"));
@@ -160,7 +150,7 @@ public class Class3 extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-            }else {
+            } else {
                 try {
                     JSONObject jsonObject = new JSONObject(content);
                     JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
@@ -175,7 +165,7 @@ public class Class3 extends Fragment {
                     max.setText(productObject.getString("Max"));
                     minb.setText(productObject.getString("Min"));
                     Banusmax.setText(productObject.getString("BanusEx"));
-                    MR.setText(productObject.getString("MR"));
+                    Mr.setText(productObject.getString("MR"));
 
                     Banus.setText(productObject.getString("Banus"));
                     Picasso.with(null).load(productObject.getString("img")).into(Perfil);
@@ -187,64 +177,34 @@ public class Class3 extends Fragment {
                     range.setText(productObject.getString("Range"));
 
 
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
-<<<<<<< HEAD
-=======
+            }
+        }
+
+
+        private  String readURL(String theUrl) {
+            StringBuilder content = new StringBuilder();
             try {
-                JSONObject jsonObject = new JSONObject(content);
-                JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
-
-                JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class3").getJSONObject(0);
-
-                inicial.setText(productObject.getString("inicial"));
-                hpb.setText(productObject.getString("Hp"));
-                atkb.setText(productObject.getString("Atk"));
-                defb.setText(productObject.getString("Def"));
-                blockB.setText(productObject.getString("Block"));
-                max.setText(productObject.getString("Max"));
-                Rm.setText(productObject.getString("MR"));
-
-                minb.setText(productObject.getString("Min"));
-                Picasso.with(null).load(productObject.getString("img")).into(Perfil);
-                productObject = jsonArray.getJSONObject(i).getJSONArray("class3").getJSONObject(1);
-                inicialm.setText(productObject.getString("LvMax"));
-                hpm.setText(productObject.getString("Hp"));
-                atkm.setText(productObject.getString("Atk"));
-                defm.setText(productObject.getString("Def"));
-                range.setText(productObject.getString("Range"));
-
-
-            } catch (JSONException e) {
+                // create a url object
+                URL url = new URL(theUrl);
+                // create a urlconnection object
+                URLConnection urlConnection = url.openConnection();
+                // wrap the urlconnection in a bufferedreader
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                String line;
+                // read from the urlconnection via the bufferedreader
+                while ((line = bufferedReader.readLine()) != null) {
+                    content.append(line + "\n");
+                }
+                bufferedReader.close();
+            } catch (Exception e) {
                 e.printStackTrace();
->>>>>>> 48359499da3de8f5138d320ca40b44c167d6ed06
             }
+            return content.toString();
         }
-    }
-
-
-    private static String readURL(String theUrl) {
-        StringBuilder content = new StringBuilder();
-        try {
-            // create a url object
-            URL url = new URL(theUrl);
-            // create a urlconnection object
-            URLConnection urlConnection = url.openConnection();
-            // wrap the urlconnection in a bufferedreader
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-            String line;
-            // read from the urlconnection via the bufferedreader
-            while ((line = bufferedReader.readLine()) != null) {
-                content.append(line + "\n");
-            }
-            bufferedReader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return content.toString();
     }
 }
 

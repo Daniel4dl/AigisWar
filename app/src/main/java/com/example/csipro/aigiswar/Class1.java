@@ -45,23 +45,23 @@ public class Class1 extends Fragment {
     TextView minb;
     TextView Banusmax;
     TextView nombre;
-    TextView Rm;
+    TextView Mr;
     TextView class1;
     TextView Favorito;
-    TextView MR;
-    Button add;
+    String clase;
     TextView Banus;
+    Button add;
     boolean favorito;
     int i = 0;
-String clase;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View root=inflater.inflate(R.layout.class1,container,false);
-        Perfil =root. findViewById(R.id.foto);
-        Favorito=root.findViewById(R.id.Favorito);
+        View root = inflater.inflate(R.layout.class1, container, false);
+        Perfil = root.findViewById(R.id.foto);
+        Favorito = root.findViewById(R.id.Favorito);
         inicial = root.findViewById(R.id.lv1);
         atkb = root.findViewById(R.id.atkb);
         defb = root.findViewById(R.id.defb);
@@ -75,42 +75,26 @@ String clase;
         hpm = root.findViewById(R.id.hpmax);
         atkm = root.findViewById(R.id.actkm);
         defm = root.findViewById(R.id.defm);
-        class1=root.findViewById(R.id.class1);
-        add=root.findViewById(R.id.Add);
-<<<<<<< HEAD
+        class1 = root.findViewById(R.id.class1);
+        add = root.findViewById(R.id.Add);
+        Mr = root.findViewById(R.id.Mr);
         Banus=root.findViewById(R.id.banus);
-=======
-        Rm=root.findViewById(R.id.Mr);
         Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
->>>>>>> 48359499da3de8f5138d320ca40b44c167d6ed06
+        i = obj.getId();
+        clase = obj.getRare();
 
-        MR=root.findViewById(R.id.Mr);
-        Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
-        clase=obj.getRare();
-        i=obj.getId();
-
-<<<<<<< HEAD
-        switch (clase){
+        switch (clase) {
             case "Gold":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/gold.js");
                 break;
 
-=======
-        switch (obj.getRare()){
-            case "Gold":
-                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/gold.js");
-                break;
-            case "Plata":
-                new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/silver.js");
-                break;
->>>>>>> 48359499da3de8f5138d320ca40b44c167d6ed06
             case "Platinum":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/platino.js");
                 break;
             case "Black":
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/black.js");
                 break;
-       }
+        }
 
 
         setHasOptionsMenu(true);
@@ -125,8 +109,9 @@ String clase;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-    return true;
+        return true;
     }
+
     class ReadJSON extends AsyncTask<String, Integer, String> {
 
         @Override
@@ -136,126 +121,90 @@ String clase;
 
         @Override
         protected void onPostExecute(String content) {
-<<<<<<< HEAD
-                if (clase.equals("Gold")) {
-                    try {
-                        JSONObject jsonObject = new JSONObject(content);
-                        JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
 
-                        JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(0);
+            if (clase.equals("Gold")) {
+                try {
+                    JSONObject jsonObject = new JSONObject(content);
+                    JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
 
-                        inicial.setText(productObject.getString("inicial"));
-                        hpb.setText(productObject.getString("Hp"));
-                        atkb.setText(productObject.getString("Atk"));
-                        defb.setText(productObject.getString("Def"));
-                        blockB.setText(productObject.getString("Block"));
-                        MR.setText(productObject.getString("MR"));
-                        max.setText(productObject.getString("Max"));
-                        minb.setText(productObject.getString("Min"));
-                        Banus.setText(productObject.getString("Banus"));
-                        Picasso.with(null).load(productObject.getString("img")).into(Perfil);
-                        productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(1);
-                        inicialm.setText(productObject.getString("LvMax"));
-                        hpm.setText(productObject.getString("Hp"));
-                        atkm.setText(productObject.getString("Atk"));
-                        defm.setText(productObject.getString("Def"));
-                        range.setText(productObject.getString("Range"));
+                    JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(0);
 
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }else {
-                    try {
-                        JSONObject jsonObject = new JSONObject(content);
-                        JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
-
-                        JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(0);
-
-                        inicial.setText(productObject.getString("inicial"));
-                        hpb.setText(productObject.getString("Hp"));
-                        atkb.setText(productObject.getString("Atk"));
-                        defb.setText(productObject.getString("Def"));
-                        blockB.setText(productObject.getString("Block"));
-                        max.setText(productObject.getString("Max"));
-                        minb.setText(productObject.getString("Min"));
-                        Banusmax.setText(productObject.getString("BanusEx"));
-                        MR.setText(productObject.getString("MR"));
-
-                        Banus.setText(productObject.getString("Banus"));
-                        Picasso.with(null).load(productObject.getString("img")).into(Perfil);
-                        productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(1);
-                        inicialm.setText(productObject.getString("LvMax"));
-                        hpm.setText(productObject.getString("Hp"));
-                        atkm.setText(productObject.getString("Atk"));
-                        defm.setText(productObject.getString("Def"));
-                        range.setText(productObject.getString("Range"));
+                    inicial.setText(productObject.getString("inicial"));
+                    hpb.setText(productObject.getString("Hp"));
+                    atkb.setText(productObject.getString("Atk"));
+                    defb.setText(productObject.getString("Def"));
+                    blockB.setText(productObject.getString("Block"));
+                    Mr.setText(productObject.getString("MR"));
+                    max.setText(productObject.getString("Max"));
+                    minb.setText(productObject.getString("Min"));
+                    Banus.setText(productObject.getString("Banus"));
+                    Picasso.with(null).load(productObject.getString("img")).into(Perfil);
+                    productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(1);
+                    inicialm.setText(productObject.getString("LvMax"));
+                    hpm.setText(productObject.getString("Hp"));
+                    atkm.setText(productObject.getString("Atk"));
+                    defm.setText(productObject.getString("Def"));
+                    range.setText(productObject.getString("Range"));
 
 
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-=======
+            } else {
+                try {
+                    JSONObject jsonObject = new JSONObject(content);
+                    JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
 
+                    JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(0);
+
+                    inicial.setText(productObject.getString("inicial"));
+                    hpb.setText(productObject.getString("Hp"));
+                    atkb.setText(productObject.getString("Atk"));
+                    defb.setText(productObject.getString("Def"));
+                    blockB.setText(productObject.getString("Block"));
+                    max.setText(productObject.getString("Max"));
+                    minb.setText(productObject.getString("Min"));
+                    Banusmax.setText(productObject.getString("BanusEx"));
+                    Mr.setText(productObject.getString("MR"));
+
+                    Banus.setText(productObject.getString("Banus"));
+                    Picasso.with(null).load(productObject.getString("img")).into(Perfil);
+                    productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(1);
+                    inicialm.setText(productObject.getString("LvMax"));
+                    hpm.setText(productObject.getString("Hp"));
+                    atkm.setText(productObject.getString("Atk"));
+                    defm.setText(productObject.getString("Def"));
+                    range.setText(productObject.getString("Range"));
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+
+
+        private  String readURL(String theUrl) {
+            StringBuilder content = new StringBuilder();
             try {
-                JSONObject jsonObject = new JSONObject(content);
-
-                JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
-
-                JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(0);
-
-                inicial.setText(productObject.getString("inicial"));
-                hpb.setText(productObject.getString("Hp"));
-                atkb.setText(productObject.getString("Atk"));
-                defb.setText(productObject.getString("Def"));
-                blockB.setText(productObject.getString("Block"));
-                max.setText(productObject.getString("Max"));
-                minb.setText(productObject.getString("Min"));
-                Banusmax.setText(productObject.getString("Banus"));
-                Rm.setText(productObject.getString("MR"));
-                Picasso.with(null).load(productObject.getString("img")).into(Perfil);
-
-                productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(1);
-
-                inicialm.setText(productObject.getString("LvMax"));
-                hpm.setText(productObject.getString("Hp"));
-                atkm.setText(productObject.getString("Atk"));
-                defm.setText(productObject.getString("Def"));
-                range.setText(productObject.getString("Range"));
-
-
-            } catch (JSONException e) {
+                // create a url object
+                URL url = new URL(theUrl);
+                // create a urlconnection object
+                URLConnection urlConnection = url.openConnection();
+                // wrap the urlconnection in a bufferedreader
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                String line;
+                // read from the urlconnection via the bufferedreader
+                while ((line = bufferedReader.readLine()) != null) {
+                    content.append(line + "\n");
+                }
+                bufferedReader.close();
+            } catch (Exception e) {
                 e.printStackTrace();
-                System.out.println(e);
             }
-
->>>>>>> 48359499da3de8f5138d320ca40b44c167d6ed06
+            return content.toString();
         }
-    }
-
-
-    private static String readURL(String theUrl) {
-        StringBuilder content = new StringBuilder();
-        try {
-            // create a url object
-            URL url = new URL(theUrl);
-            // create a urlconnection object
-            URLConnection urlConnection = url.openConnection();
-            // wrap the urlconnection in a bufferedreader
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-            String line;
-            // read from the urlconnection via the bufferedreader
-            while ((line = bufferedReader.readLine()) != null) {
-                content.append(line + "\n");
-            }
-            bufferedReader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return content.toString();
     }
 }
 
