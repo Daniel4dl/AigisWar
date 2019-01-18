@@ -37,6 +37,21 @@ public class MainMission extends AppCompatActivity {
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/misiones.js");
             }
         });
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = null;
+                switch (position) {
+
+                    case 0:
+                        intent = new Intent(MainMission.this, StoryMission.class);
+                        break;
+
+                }
+                startActivity(intent);
+            }
+        });
     }
     class ReadJSON extends AsyncTask<String, Integer, String> {
 

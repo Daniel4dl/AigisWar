@@ -27,6 +27,7 @@
         <activity android:name=".MainGold"></activity>
         <activity android:name=".MenuGold"></activity>
         <activity android:name=".MainMission"></activity>
+        <activity android:name=".StoryMission"></activity>
     </application>
 
 </manifest>

@@ -76,7 +76,7 @@ public class Class1 extends Fragment {
         atkm = root.findViewById(R.id.actkm);
         defm = root.findViewById(R.id.defm);
         class1 = root.findViewById(R.id.class1);
-        add = root.findViewById(R.id.Add);
+
         Mr = root.findViewById(R.id.Mr);
         Banus=root.findViewById(R.id.banus);
         Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
