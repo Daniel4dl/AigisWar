@@ -37,6 +37,14 @@ TextView parrafo1;
     TextView arco4;
     ImageView img5;
     TextView arco5;
+    ImageView img6;
+    TextView arco6;
+    ImageView img7;
+    TextView arco7;
+    ImageView img8;
+    TextView arco8;
+    ImageView img9;
+    TextView arco9;
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -54,8 +62,18 @@ TextView parrafo1;
         img2=findViewById(R.id.img2);
         arco3=findViewById(R.id.arco3);
         img3=findViewById(R.id.img3);
-
-
+        arco4=findViewById(R.id.arco4);
+        img4=findViewById(R.id.img4);
+        arco5=findViewById(R.id.arco5);
+        img5=findViewById(R.id.img5);
+        arco6=findViewById(R.id.arco6);
+        img6=findViewById(R.id.img6);
+        arco7=findViewById(R.id.arco7);
+        img7=findViewById(R.id.img7);
+        arco8=findViewById(R.id.arco8);
+        img8=findViewById(R.id.img8);
+        arco9=findViewById(R.id.arco9);
+        img9=findViewById(R.id.img9);
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -89,6 +107,18 @@ TextView parrafo1;
                 Picasso.with(null).load(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(1).getString("img")).into(img2);
                 arco3.setText(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(2).getString("nombre de arco"));
                 Picasso.with(null).load(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(2).getString("img")).into(img3);
+                arco4.setText(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(3).getString("nombre de arco"));
+                Picasso.with(null).load(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(3).getString("img")).into(img4);
+                arco5.setText(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(4).getString("nombre de arco"));
+                Picasso.with(null).load(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(4).getString("img")).into(img5);
+                arco6.setText(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(5).getString("nombre de arco"));
+                Picasso.with(null).load(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(5).getString("img")).into(img6);
+                arco7.setText(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(6).getString("nombre de arco"));
+                Picasso.with(null).load(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(6).getString("img")).into(img7);
+                arco8.setText(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(7).getString("nombre de arco"));
+                Picasso.with(null).load(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(7).getString("img")).into(img8);
+                arco9.setText(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(8).getString("nombre de arco"));
+                Picasso.with(null).load(jsonArray.getJSONObject(2).getJSONArray("Arcos").getJSONObject(8).getString("img")).into(img9);
 
             } catch (JSONException e) {
                 e.printStackTrace();

@@ -9,7 +9,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 <ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"><LinearLayout
+    android:layout_height="match_parent">
+
+ <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -21,12 +23,15 @@
 
      android:layout_gravity="center"
      android:layout_height="wrap_content"  />
- <TextView
-     android:layout_width="wrap_content"
+
+ <me.biubiubiu.justifytext.library.JustifyTextView
      android:id="@+id/parrafo1"
-     android:textColor="@color/white"
-     android:padding="40px"
-     android:layout_height="wrap_content" />
+     android:layout_gravity="center"
+     android:layout_width="650px"
+     android:layout_marginLeft="30px"
+     android:layout_height="match_parent"
+     android:textColor="@color/white" />
+
  <TextView
      android:layout_width="wrap_content"
      android:textColor="@color/white"
@@ -35,11 +40,12 @@
 
      android:layout_gravity="center"
      android:layout_height="wrap_content"  />
- <TextView
-     android:layout_width="wrap_content"
+ <me.biubiubiu.justifytext.library.JustifyTextView
+     android:layout_width="650px"
+     android:layout_marginLeft="30px"
      android:id="@+id/parrafo2"
      android:textColor="@color/white"
-     android:padding="40px"
+     android:layout_gravity="center"
      android:layout_height="wrap_content" />
  <ImageView
      android:layout_width="match_parent"
@@ -53,15 +59,21 @@
 
      android:layout_gravity="center"
      android:layout_height="wrap_content"  />
- <TextView
-     android:layout_width="wrap_content"
+ <me.biubiubiu.justifytext.library.JustifyTextView
+     android:layout_width="650px"
+     android:layout_marginLeft="30px"
      android:id="@+id/parrafo3"
      android:textColor="@color/white"
+     android:layout_gravity="center"
      android:padding="40px"
      android:layout_height="wrap_content" />
  <TextView
      android:layout_width="match_parent"
      android:id="@+id/arco1"
+     android:textColor="@color/white"
+
+
+     android:gravity="center"
      android:layout_height="match_parent" />
  <ImageView
      android:id="@+id/img1"
@@ -70,22 +82,32 @@
  <TextView
      android:layout_width="match_parent"
      android:id="@+id/arco2"
+     android:textColor="@color/white"
+
+
+     android:gravity="center"
      android:layout_height="match_parent" />
  <ImageView
      android:id="@+id/img2"
      android:layout_width="match_parent"
      android:layout_height="match_parent" />
  <TextView
+     android:textColor="@color/white"
+
+
      android:layout_width="match_parent"
      android:id="@+id/arco3"
+     android:gravity="center"
      android:layout_height="match_parent" />
  <ImageView
      android:id="@+id/img3"
      android:layout_width="match_parent"
      android:layout_height="match_parent" />
  <TextView
+     android:textColor="@color/white"
      android:layout_width="match_parent"
      android:id="@+id/arco4"
+     android:gravity="center"
      android:layout_height="match_parent" />
  <ImageView
      android:id="@+id/img4"
@@ -93,10 +115,57 @@
      android:layout_height="match_parent" />
  <TextView
      android:layout_width="match_parent"
+     android:textColor="@color/white"
+
      android:id="@+id/arco5"
+     android:gravity="center"
      android:layout_height="match_parent" />
  <ImageView
      android:id="@+id/img5"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent" />
+ <TextView
+     android:layout_width="match_parent"
+     android:textColor="@color/white"
+
+     android:id="@+id/arco6"
+     android:gravity="center"
+     android:layout_height="match_parent" />
+ <ImageView
+     android:id="@+id/img6"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent" />
+ <TextView
+     android:layout_width="match_parent"
+     android:textColor="@color/white"
+
+     android:id="@+id/arco7"
+     android:gravity="center"
+     android:layout_height="match_parent" />
+ <ImageView
+     android:id="@+id/img7"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent" />
+ <TextView
+     android:layout_width="match_parent"
+     android:textColor="@color/white"
+
+     android:id="@+id/arco8"
+     android:gravity="center"
+     android:layout_height="match_parent" />
+ <ImageView
+     android:id="@+id/img8"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent" />
+ <TextView
+     android:layout_width="match_parent"
+     android:textColor="@color/white"
+
+     android:id="@+id/arco9"
+     android:gravity="center"
+     android:layout_height="match_parent" />
+ <ImageView
+     android:id="@+id/img9"
      android:layout_width="match_parent"
      android:layout_height="match_parent" />
 </LinearLayout></ScrollView>
