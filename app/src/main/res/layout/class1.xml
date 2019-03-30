@@ -5,22 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".Class1">
 
-    <LinearLayout
 
-        android:layout_width="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
-        android:background="@color/fondo"
-        android:layout_height="match_parent">
-
-
-
-
-          <ImageView
-              android:id="@+id/foto"
-              android:layout_width="600px"
-              android:layout_gravity="center"
-              android:layout_height="620px" />
 
 
         <TextView
@@ -48,7 +33,7 @@
                 <TextView
                     android:background="@color/dimegra"
                     android:layout_width="match_parent"
-                    android:layout_height="19dp"
+                    android:layout_height="50px"
                     android:gravity="center"
                     android:text="Inicial"
                     android:textColor="@color/white" />
@@ -59,7 +44,7 @@
 
                     android:id="@+id/textView21"
                     android:layout_width="match_parent"
-                    android:layout_height="39px"
+                    android:layout_height="50px"
                     android:gravity="center"
                     android:text="Max" />
 
@@ -76,7 +61,7 @@
                     android:background="@color/gray"
                     android:id="@+id/lv55"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="132px"
 
 
                     android:gravity="center"
@@ -195,14 +180,14 @@
                     android:background="@color/dimegra"
                     android:textColor="@color/white"
                     android:layout_width="match_parent"
-                    android:layout_height="77px"
+                    android:layout_height="100px"
                     android:gravity="center"
                     android:text="MR" />
 
                 <TextView
                     android:id="@+id/Mr"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="263px"
                     android:background="@color/gray"
                     android:gravity="center"
                     android:textColor="@color/white" />
@@ -219,7 +204,7 @@
                     android:textColor="@color/white"
                     android:id="@+id/textView28"
                     android:layout_width="match_parent"
-                    android:layout_height="35px"
+                    android:layout_height="50px"
                     android:gravity="center"
                     android:text="Block" />
 
@@ -228,7 +213,7 @@
                     android:textColor="@color/white"
                     android:id="@+id/textView29"
                     android:layout_width="match_parent"
-                    android:layout_height="42px"
+                    android:layout_height="50px"
                     android:gravity="center"
                     android:text="Range" />
 
@@ -238,7 +223,7 @@
                     android:id="@+id/block"
                     android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="100px" />
+                    android:layout_height="131px" />
 
                 <TextView
                     android:background="@color/gray"
@@ -246,7 +231,7 @@
                     android:id="@+id/range"
                     android:gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp" />
+                    android:layout_height="132px" />
             </LinearLayout>
 
             <LinearLayout
@@ -259,7 +244,7 @@
                 <TextView
                     android:id="@+id/textView30"
                     android:layout_width="match_parent"
-                    android:layout_height="37px"
+                    android:layout_height="50px"
                     android:background="@color/dimegra"
                     android:gravity="center"
                     android:text="Cost"
@@ -267,51 +252,52 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="41px"
+                    android:layout_height="50px"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView32"
                         android:layout_width="35dp"
-                        android:layout_height="40px"
+                        android:layout_height="49px"
                         android:background="@color/dimegra"
                         android:gravity="center"
                         android:text="Max"
                         android:textColor="@color/white" />
-
                     <TextView
-                        android:id="@+id/tc1"
+
                         android:layout_width="35dp"
-                        android:layout_height="40px"
+                        android:layout_height="49px"
                         android:background="@color/dimegra"
                         android:gravity="center"
                         android:text="Min"
                         android:textColor="@color/white" />
-                </LinearLayout>
 
+
+                </LinearLayout>
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="263px"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/max"
-                        android:layout_width="70px"
-                        android:layout_height="match_parent"
+                        android:layout_width="35dp"
+                        android:layout_height="262px"
                         android:gravity="center"
                         android:text="Max"
                         android:textColor="@color/white" />
-
                     <TextView
                         android:id="@+id/min"
-                        android:layout_width="70px"
-                        android:layout_height="match_parent"
+                        android:layout_width="35dp"
+                        android:layout_height="262px"
                         android:gravity="center"
                         android:text="Min"
                         android:textColor="@color/white" />
 
 
                 </LinearLayout>
+
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -348,6 +334,6 @@
             </LinearLayout>
 
         </LinearLayout>
-    </LinearLayout>
+
 
 </FrameLayout>

@@ -53,6 +53,7 @@ public class MainMission extends AppCompatActivity {
             }
         });
     }
+
     class ReadJSON extends AsyncTask<String, Integer, String> {
 
         @Override

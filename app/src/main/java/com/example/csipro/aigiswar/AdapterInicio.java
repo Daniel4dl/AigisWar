@@ -34,10 +34,10 @@ public class AdapterInicio extends ArrayAdapter<inicio> {
             convertView = layoutInflater.inflate(R.layout.item, null, true);
 
         }
-      inicio inicio =getItem(position);
-        ImageView imageView=convertView.findViewById(R.id.Menu);
+        inicio inicio = getItem(position);
+        ImageView imageView = convertView.findViewById(R.id.Menu);
         Picasso.with(context).load(inicio.getUrl()).into(imageView);
-        TextView textView=convertView.findViewById(R.id.nombretxt);
+        TextView textView = convertView.findViewById(R.id.nombretxt);
         textView.setText(inicio.getNombre());
         return convertView;
     }

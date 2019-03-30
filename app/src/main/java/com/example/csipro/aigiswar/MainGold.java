@@ -54,10 +54,7 @@ public class MainGold extends AppCompatActivity {
         });
 
 
-
     }
-
-
 
 
     class ReadJSON extends AsyncTask<String, Integer, String> {
@@ -84,8 +81,7 @@ public class MainGold extends AppCompatActivity {
                             productObject.getJSONArray("class2").getJSONObject(0).getString("clase"),
                             productObject.getJSONArray("class3").getJSONObject(0).getString("clase"),
                             productObject.getJSONArray("class4").getJSONObject(0).getString("clase")
-                            ));
-
+                    ));
 
 
                 }

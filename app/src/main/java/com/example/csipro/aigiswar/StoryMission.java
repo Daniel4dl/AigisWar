@@ -19,8 +19,8 @@ import java.net.URLConnection;
 
 
 public class StoryMission extends AppCompatActivity {
-TextView title1;
-TextView parrafo1;
+    TextView title1;
+    TextView parrafo1;
     TextView title2;
     TextView parrafo2;
     TextView title3;
@@ -45,35 +45,36 @@ TextView parrafo1;
     TextView arco8;
     ImageView img9;
     TextView arco9;
+
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mission);
-     title1=findViewById(R.id.title1);
-     parrafo1=findViewById(R.id.parrafo1);
-        title2=findViewById(R.id.title2);
-        parrafo2=findViewById(R.id.parrafo2);
-        img=findViewById(R.id.img);
-        title3=findViewById(R.id.title3);
-        parrafo3=findViewById(R.id.parrafo3);
-        arco1=findViewById(R.id.arco1);
-        img1=findViewById(R.id.img1);
-        arco2=findViewById(R.id.arco2);
-        img2=findViewById(R.id.img2);
-        arco3=findViewById(R.id.arco3);
-        img3=findViewById(R.id.img3);
-        arco4=findViewById(R.id.arco4);
-        img4=findViewById(R.id.img4);
-        arco5=findViewById(R.id.arco5);
-        img5=findViewById(R.id.img5);
-        arco6=findViewById(R.id.arco6);
-        img6=findViewById(R.id.img6);
-        arco7=findViewById(R.id.arco7);
-        img7=findViewById(R.id.img7);
-        arco8=findViewById(R.id.arco8);
-        img8=findViewById(R.id.img8);
-        arco9=findViewById(R.id.arco9);
-        img9=findViewById(R.id.img9);
+        title1 = findViewById(R.id.title1);
+        parrafo1 = findViewById(R.id.parrafo1);
+        title2 = findViewById(R.id.title2);
+        parrafo2 = findViewById(R.id.parrafo2);
+        img = findViewById(R.id.img);
+        title3 = findViewById(R.id.title3);
+        parrafo3 = findViewById(R.id.parrafo3);
+        arco1 = findViewById(R.id.arco1);
+        img1 = findViewById(R.id.img1);
+        arco2 = findViewById(R.id.arco2);
+        img2 = findViewById(R.id.img2);
+        arco3 = findViewById(R.id.arco3);
+        img3 = findViewById(R.id.img3);
+        arco4 = findViewById(R.id.arco4);
+        img4 = findViewById(R.id.img4);
+        arco5 = findViewById(R.id.arco5);
+        img5 = findViewById(R.id.img5);
+        arco6 = findViewById(R.id.arco6);
+        img6 = findViewById(R.id.img6);
+        arco7 = findViewById(R.id.arco7);
+        img7 = findViewById(R.id.img7);
+        arco8 = findViewById(R.id.arco8);
+        img8 = findViewById(R.id.img8);
+        arco9 = findViewById(R.id.arco9);
+        img9 = findViewById(R.id.img9);
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -82,6 +83,7 @@ TextView parrafo1;
         });
 
     }
+
     class ReadJSON extends AsyncTask<String, Integer, String> {
 
         @Override
@@ -123,7 +125,6 @@ TextView parrafo1;
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
 
 
         }

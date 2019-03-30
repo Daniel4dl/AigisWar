@@ -9,54 +9,24 @@ public class Unidades implements Serializable {
     private String rare;
     private String Id;
     private String Perfil;
-    private  Boolean Favorito;
+    private Boolean Favorito;
     private String Clas2;
     private String Clas3;
     private String Clas4;
     private String Clas5;
-    public Unidades(String image, String name, String Class,String id,Boolean favorito,String rare) {
-        this.rare=rare;
+
+    public Unidades(String image, String name, String Class, String id, Boolean favorito, String rare) {
+        this.rare = rare;
         this.image = image;
         this.name = name;
         this.Clas = Class;
         this.Id = id;
-        this.Favorito=favorito;
+        this.Favorito = favorito;
     }
 
-    public Unidades(String image, String name, String Class,String id,String rare,String clas2) {
-        this.rare=rare;
-        this.Clas2=clas2;
-        this.image = image;
-        this.name = name;
-        this.Clas = Class;
-        this.Id = id;
-
-    }
-    public Unidades(String image, String name, String Class,String id,String rare,String clas2,String clas3,String clas4) {
-        this.rare=rare;
-        this.Clas3=clas3;
-        this.Clas4=clas4;
-        this.Clas2=clas2;
-        this.image = image;
-        this.name = name;
-        this.Clas = Class;
-        this.Id = id;
-
-    }
-    public Unidades(String image, String name, String Class,String id,String rare,String clas2,String clas3,String clas4, String clas5) {
-        this.rare=rare;
-        this.Clas3=clas3;
-        this.Clas4=clas4;
-        this.Clas2=clas2;
-        this.image = image;
-        this.name = name;
-        this.Clas = Class;
-        this.Id = id;
-        this.Clas5=clas5;
-
-    }
-    public Unidades(String image, String name, String Class,String id,String rare) {
-        this.rare=rare;
+    public Unidades(String image, String name, String Class, String id, String rare, String clas2) {
+        this.rare = rare;
+        this.Clas2 = clas2;
         this.image = image;
         this.name = name;
         this.Clas = Class;
@@ -64,7 +34,41 @@ public class Unidades implements Serializable {
 
     }
 
-     public Unidades(String image, String name, String price) {
+    public Unidades(String image, String name, String Class, String id, String rare, String clas2, String clas3, String clas4) {
+        this.rare = rare;
+        this.Clas3 = clas3;
+        this.Clas4 = clas4;
+        this.Clas2 = clas2;
+        this.image = image;
+        this.name = name;
+        this.Clas = Class;
+        this.Id = id;
+
+    }
+
+    public Unidades(String image, String name, String Class, String id, String rare, String clas2, String clas3, String clas4, String clas5) {
+        this.rare = rare;
+        this.Clas3 = clas3;
+        this.Clas4 = clas4;
+        this.Clas2 = clas2;
+        this.image = image;
+        this.name = name;
+        this.Clas = Class;
+        this.Id = id;
+        this.Clas5 = clas5;
+
+    }
+
+    public Unidades(String image, String name, String Class, String id, String rare) {
+        this.rare = rare;
+        this.image = image;
+        this.name = name;
+        this.Clas = Class;
+        this.Id = id;
+
+    }
+
+    public Unidades(String image, String name, String price) {
         this.image = image;
         this.name = name;
         this.Clas = price;
@@ -110,7 +114,8 @@ public class Unidades implements Serializable {
     public int getId() {
         return Integer.parseInt(Id);
     }
-    public boolean getFav(){
+
+    public boolean getFav() {
         return Favorito;
     }
 

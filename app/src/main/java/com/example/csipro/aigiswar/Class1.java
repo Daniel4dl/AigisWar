@@ -30,7 +30,6 @@ import java.net.URLConnection;
  * A simple {@link Fragment} subclass.
  */
 public class Class1 extends Fragment {
-    ImageView Perfil;
     TextView inicial;
     TextView inicialm;
     TextView hpb;
@@ -48,9 +47,9 @@ public class Class1 extends Fragment {
     TextView Mr;
     TextView class1;
     TextView Favorito;
-    String clase;
     TextView Banus;
-    Button add;
+    String clase;
+
     boolean favorito;
     int i = 0;
 
@@ -60,7 +59,6 @@ public class Class1 extends Fragment {
         // Inflate the layout for this fragment
 
         View root = inflater.inflate(R.layout.class1, container, false);
-        Perfil = root.findViewById(R.id.foto);
         Favorito = root.findViewById(R.id.Favorito);
         inicial = root.findViewById(R.id.lv1);
         atkb = root.findViewById(R.id.atkb);
@@ -76,9 +74,8 @@ public class Class1 extends Fragment {
         atkm = root.findViewById(R.id.actkm);
         defm = root.findViewById(R.id.defm);
         class1 = root.findViewById(R.id.class1);
-
         Mr = root.findViewById(R.id.Mr);
-        Banus=root.findViewById(R.id.banus);
+        Banus = root.findViewById(R.id.banus);
         Unidades obj = (Unidades) getActivity().getIntent().getExtras().getSerializable("objecto");
         i = obj.getId();
         clase = obj.getRare();
@@ -138,7 +135,6 @@ public class Class1 extends Fragment {
                     max.setText(productObject.getString("Max"));
                     minb.setText(productObject.getString("Min"));
                     Banus.setText(productObject.getString("Banus"));
-                    Picasso.with(null).load(productObject.getString("img")).into(Perfil);
                     productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(1);
                     inicialm.setText(productObject.getString("LvMax"));
                     hpm.setText(productObject.getString("Hp"));
@@ -166,9 +162,8 @@ public class Class1 extends Fragment {
                     minb.setText(productObject.getString("Min"));
                     Banusmax.setText(productObject.getString("BanusEx"));
                     Mr.setText(productObject.getString("MR"));
-
                     Banus.setText(productObject.getString("Banus"));
-                    Picasso.with(null).load(productObject.getString("img")).into(Perfil);
+
                     productObject = jsonArray.getJSONObject(i).getJSONArray("class1").getJSONObject(1);
                     inicialm.setText(productObject.getString("LvMax"));
                     hpm.setText(productObject.getString("Hp"));
@@ -185,7 +180,7 @@ public class Class1 extends Fragment {
         }
 
 
-        private  String readURL(String theUrl) {
+        private String readURL(String theUrl) {
             StringBuilder content = new StringBuilder();
             try {
                 // create a url object

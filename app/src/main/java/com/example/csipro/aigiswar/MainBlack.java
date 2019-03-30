@@ -39,10 +39,10 @@ public class MainBlack extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Unidades obj=(Unidades) parent.getItemAtPosition(position);
+                Unidades obj = (Unidades) parent.getItemAtPosition(position);
 
-                Intent paso=new Intent(getApplicationContext(),MenuBlack.class);
-                paso.putExtra("objecto",(Serializable)obj);
+                Intent paso = new Intent(getApplicationContext(), MenuBlack.class);
+                paso.putExtra("objecto", (Serializable) obj);
                 startActivity(paso);
 
             }
@@ -60,9 +60,9 @@ public class MainBlack extends AppCompatActivity {
         protected void onPostExecute(String content) {
             try {
                 JSONObject jsonObject = new JSONObject(content);
-                JSONArray jsonArray =  jsonObject.getJSONArray("caracerisicas");
+                JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
 
-                for(int i =0;i<jsonArray.length(); i++){
+                for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject productObject = jsonArray.getJSONObject(i);
                     arrayList.add(new Unidades(
                             productObject.getString("foto"),
@@ -81,8 +81,7 @@ public class MainBlack extends AppCompatActivity {
                 e.printStackTrace();
             }
             AdapterCaracter adapter = new AdapterCaracter(
-                    getApplicationContext(), R.layout.item_caracteristica, arrayList
-            );
+                    getApplicationContext(), R.layout.item_caracteristica, arrayList);
             lv.setAdapter(adapter);
         }
     }

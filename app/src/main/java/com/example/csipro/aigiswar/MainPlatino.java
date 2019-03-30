@@ -39,10 +39,10 @@ public class MainPlatino extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Unidades obj=(Unidades) parent.getItemAtPosition(position);
+                Unidades obj = (Unidades) parent.getItemAtPosition(position);
 
-                Intent paso=new Intent(getApplicationContext(),MenuPlatino.class);
-                paso.putExtra("objecto",(Serializable)obj);
+                Intent paso = new Intent(getApplicationContext(), MenuPlatino.class);
+                paso.putExtra("objecto", (Serializable) obj);
                 startActivity(paso);
 
             }
@@ -75,9 +75,7 @@ public class MainPlatino extends AppCompatActivity {
                             productObject.getJSONArray("class4").getJSONObject(0).getString("clase")));
 
 
-
                 }
-
 
 
             } catch (JSONException e) {

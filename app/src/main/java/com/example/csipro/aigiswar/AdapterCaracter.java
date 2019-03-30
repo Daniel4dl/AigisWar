@@ -1,4 +1,5 @@
 package com.example.csipro.aigiswar;
+
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -19,11 +20,11 @@ import java.util.List;
  */
 public class AdapterCaracter extends ArrayAdapter<Unidades> {
 
-    List<Unidades>Unidades;
+    List<Unidades> Unidades;
     Context context;
     int resource;
 
-    public AdapterCaracter(Context context, int resource,List<Unidades> unidades) {
+    public AdapterCaracter(Context context, int resource, List<Unidades> unidades) {
         super(context, resource, unidades);
         Unidades = unidades;
         this.context = context;
@@ -33,7 +34,7 @@ public class AdapterCaracter extends ArrayAdapter<Unidades> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null){
+        if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) getContext()
                     .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.item_caracteristica, null, true);

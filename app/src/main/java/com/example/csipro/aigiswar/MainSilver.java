@@ -56,10 +56,7 @@ public class MainSilver extends AppCompatActivity {
         });
 
 
-
     }
-
-
 
 
     class ReadJSON extends AsyncTask<String, Integer, String> {
@@ -85,7 +82,6 @@ public class MainSilver extends AppCompatActivity {
                             productObject.getString("rareza"),
                             productObject.getJSONArray("class2").getJSONObject(0).getString("clase")
                     ));
-
 
 
                 }

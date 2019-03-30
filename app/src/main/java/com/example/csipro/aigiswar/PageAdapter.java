@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
  * Created by abdalla on 2/18/18.
  */
 
-public class PageAdapter extends FragmentPagerAdapter  {
+public class PageAdapter extends FragmentPagerAdapter {
 
     private int numOfTabs;
 
@@ -26,9 +26,8 @@ public class PageAdapter extends FragmentPagerAdapter  {
                 return new Class2();
             case 0:
                 return new Class1();
-
-                case 2:
-                    return new Class3();
+            case 2:
+                return new Class3();
             case 3:
                 return new Class4();
             case 4:

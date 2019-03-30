@@ -14,8 +14,6 @@ public class MenuGold extends AppCompatActivity {
     PageAdapter pageAdapter;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

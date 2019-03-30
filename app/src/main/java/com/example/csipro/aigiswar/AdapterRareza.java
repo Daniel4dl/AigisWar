@@ -22,14 +22,15 @@ public class AdapterRareza extends ArrayAdapter<Rareza> {
 
     public AdapterRareza(Context context, int resource, ArrayList<Rareza> Rareza) {
         super(context, resource, Rareza);
-        this.rareza =Rareza;
+        this.rareza = Rareza;
         this.context = context;
         this.res = resource;
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        if (convertView == null){
+        if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) getContext()
                     .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.rareza, null, true);

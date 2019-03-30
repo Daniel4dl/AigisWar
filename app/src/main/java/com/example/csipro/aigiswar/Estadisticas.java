@@ -2,7 +2,7 @@ package com.example.csipro.aigiswar;
 
 import java.io.Serializable;
 
-public class Estadisticas implements Serializable{
+public class Estadisticas implements Serializable {
     private String Img;
     private String Inicial;
     private String Hp;
@@ -14,17 +14,17 @@ public class Estadisticas implements Serializable{
     private String Min;
     private String Bonus;
 
-    public Estadisticas(String img,String inicial,String hp,String atk,String def,String block,String range,String max,String min,String bonus){
-        this.Atk=atk;
-        this.Block=block;
-        this.Bonus=bonus;
-        this.Def=def;
-        this.Hp=atk;
-        this.Img=img;
-        this.Inicial=inicial;
-        this.Max=max;
-        this.Min=min;
-        this.Range=range;
+    public Estadisticas(String img, String inicial, String hp, String atk, String def, String block, String range, String max, String min, String bonus) {
+        this.Atk = atk;
+        this.Block = block;
+        this.Bonus = bonus;
+        this.Def = def;
+        this.Hp = atk;
+        this.Img = img;
+        this.Inicial = inicial;
+        this.Max = max;
+        this.Min = min;
+        this.Range = range;
     }
 
     public String getImg() {

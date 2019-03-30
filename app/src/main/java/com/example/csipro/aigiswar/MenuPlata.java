@@ -27,14 +27,13 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
 
-public class MenuPlata extends AppCompatActivity  {
+public class MenuPlata extends AppCompatActivity {
 
     Toolbar toolbar;
     TabLayout tabLayout;
     ViewPager viewPager;
     PageAdapter pageAdapter;
     TabItem tabItem;
-
 
 
     @Override
@@ -48,8 +47,8 @@ public class MenuPlata extends AppCompatActivity  {
 
         tabLayout = findViewById(R.id.tablayout);
         final Unidades obj = (Unidades) getIntent().getExtras().getSerializable("objecto");
-      tabLayout.getTabAt(0).setText(obj.getClas());
-      tabLayout.getTabAt(1).setText(obj.getClas2());
+        tabLayout.getTabAt(0).setText(obj.getClas());
+        tabLayout.getTabAt(1).setText(obj.getClas2());
         viewPager = findViewById(R.id.viewPager);
         pageAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pageAdapter);
@@ -76,8 +75,6 @@ public class MenuPlata extends AppCompatActivity  {
 
 
     }
-
-
 
 
 }

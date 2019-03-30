@@ -1,4 +1,5 @@
 package com.example.csipro.aigiswar;
+
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -6,9 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -18,6 +21,7 @@ import java.util.ArrayList;
 public class MainRareza extends AppCompatActivity {
     ArrayList<Rareza> arrayList;
     ListView lv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -37,16 +41,16 @@ public class MainRareza extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = null;
-                switch(position){
+                switch (position) {
 
                     case 0:
-                        intent = new Intent(MainRareza.this,MainSilver.class);
+                        intent = new Intent(MainRareza.this, MainSilver.class);
                         break;
                     case 3:
-                        intent=new Intent(MainRareza.this,MainPlatino.class);
+                        intent = new Intent(MainRareza.this, MainPlatino.class);
                         break;
                     case 4:
-                        intent = new Intent(MainRareza.this,MainBlack.class);
+                        intent = new Intent(MainRareza.this, MainBlack.class);
                         break;
                 }
 
@@ -66,9 +70,9 @@ public class MainRareza extends AppCompatActivity {
         protected void onPostExecute(String content) {
             try {
                 JSONObject jsonObject = new JSONObject(content);
-                JSONArray jsonArray =  jsonObject.getJSONArray("url");
+                JSONArray jsonArray = jsonObject.getJSONArray("url");
 
-                for(int i =0;i<jsonArray.length(); i++){
+                for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject productObject = jsonArray.getJSONObject(i);
                     arrayList.add(new Rareza(productObject.getString("imag")));
                 }
@@ -76,31 +80,31 @@ public class MainRareza extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            AdapterRareza adapter=new AdapterRareza(getApplicationContext(),R.layout.inicio,arrayList);
+            AdapterRareza adapter = new AdapterRareza(getApplicationContext(), R.layout.inicio, arrayList);
             lv.setAdapter(adapter);
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        Intent intent = null;
-        switch(position){
+                    Intent intent = null;
+                    switch (position) {
 
-            case 0:
-                intent = new Intent(MainRareza.this,MainSilver.class);
-                break;
-            case 1:
-                intent = new Intent(MainRareza.this,MainGold.class);
-                break;
-            case 2:
-                intent = new Intent(MainRareza.this,MainPlatino.class);
-                break;
-            case 3:
-                intent = new Intent(MainRareza.this,MainBlack.class);
-                break;
-        }
-        startActivity(intent);
-    }
-});
+                        case 0:
+                            intent = new Intent(MainRareza.this, MainSilver.class);
+                            break;
+                        case 1:
+                            intent = new Intent(MainRareza.this, MainGold.class);
+                            break;
+                        case 2:
+                            intent = new Intent(MainRareza.this, MainPlatino.class);
+                            break;
+                        case 3:
+                            intent = new Intent(MainRareza.this, MainBlack.class);
+                            break;
+                    }
+                    startActivity(intent);
+                }
+            });
 
 
         }
