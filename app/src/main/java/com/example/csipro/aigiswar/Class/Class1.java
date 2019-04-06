@@ -1,4 +1,4 @@
-package com.example.csipro.aigiswar;
+package com.example.csipro.aigiswar.Class;
 
 
 import android.os.AsyncTask;
@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.csipro.aigiswar.R;
+import com.example.csipro.aigiswar.Unidades;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -59,7 +61,6 @@ public class Class1 extends Fragment {
         // Inflate the layout for this fragment
 
         View root = inflater.inflate(R.layout.class1, container, false);
-        Favorito = root.findViewById(R.id.Favorito);
         inicial = root.findViewById(R.id.lv1);
         atkb = root.findViewById(R.id.atkb);
         defb = root.findViewById(R.id.defb);

@@ -4,6 +4,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.csipro.aigiswar.Class.Class1;
+import com.example.csipro.aigiswar.Class.Class2;
+import com.example.csipro.aigiswar.Class.Class3;
+import com.example.csipro.aigiswar.Class.Class4;
+import com.example.csipro.aigiswar.Class.Class5;
+
 /**
  * Created by abdalla on 2/18/18.
  */

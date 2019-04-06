@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,15 +23,18 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 
 public class MainBlack extends AppCompatActivity {
-    ArrayList<Unidades> arrayList;
-    ListView lv;
+    AdaptadorDeUnidadBlack adaptadorDeUnidadBlack;
+    ArrayList<Unidades> Unidades;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        arrayList = new ArrayList<>();
-        lv = (ListView) findViewById(R.id.listView);
+        setContentView(R.layout.inicioblack);
+        Unidades = new ArrayList<>();
+
+        RecyclerView recyclerView = findViewById(R.id.rvMain);
+         recyclerView.setLayoutManager(new GridLayoutManager(this,3));
 
         runOnUiThread(new Runnable() {
             @Override
@@ -36,19 +42,19 @@ public class MainBlack extends AppCompatActivity {
                 new ReadJSON().execute("https://inby-subordinates.000webhostapp.com/black.js");
             }
         });
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        adaptadorDeUnidadBlack=new AdaptadorDeUnidadBlack(getApplicationContext(),Unidades);
+        recyclerView.setAdapter(adaptadorDeUnidadBlack);
+        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Unidades obj = (Unidades) parent.getItemAtPosition(position);
+            public void onItemClick(View view, int position) {
 
                 Intent paso = new Intent(getApplicationContext(), MenuBlack.class);
-                paso.putExtra("objecto", (Serializable) obj);
+                paso.putExtra("objecto", (Serializable) Unidades.get(position));
                 startActivity(paso);
-
             }
-        });
-    }
+        }));
 
+    }
     class ReadJSON extends AsyncTask<String, Integer, String> {
 
         @Override
@@ -64,7 +70,7 @@ public class MainBlack extends AppCompatActivity {
 
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject productObject = jsonArray.getJSONObject(i);
-                    arrayList.add(new Unidades(
+                    Unidades.add(new Unidades(
                             productObject.getString("foto"),
                             productObject.getString("nombre"),
                             productObject.getString("clase"),
@@ -80,9 +86,6 @@ public class MainBlack extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            AdapterCaracter adapter = new AdapterCaracter(
-                    getApplicationContext(), R.layout.item_caracteristica, arrayList);
-            lv.setAdapter(adapter);
         }
     }
 

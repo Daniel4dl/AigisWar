@@ -1,4 +1,4 @@
-package com.example.csipro.aigiswar;
+package com.example.csipro.aigiswar.Class;
 
 
 import android.os.AsyncTask;
@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.csipro.aigiswar.R;
+import com.example.csipro.aigiswar.Unidades;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -29,7 +31,7 @@ import java.net.URLConnection;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Class4 extends Fragment {
+public class Class2 extends Fragment {
     TextView inicial;
     TextView inicialm;
     TextView hpb;
@@ -50,7 +52,6 @@ public class Class4 extends Fragment {
     String clase;
     TextView Banus;
     Button add;
-    boolean favorito;
     int i = 0;
 
 
@@ -59,7 +60,6 @@ public class Class4 extends Fragment {
         // Inflate the layout for this fragment
 
         View root = inflater.inflate(R.layout.class1, container, false);
-        Favorito = root.findViewById(R.id.Favorito);
         inicial = root.findViewById(R.id.lv1);
         atkb = root.findViewById(R.id.atkb);
         defb = root.findViewById(R.id.defb);
@@ -124,7 +124,7 @@ public class Class4 extends Fragment {
                     JSONObject jsonObject = new JSONObject(content);
                     JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
 
-                    JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class4").getJSONObject(0);
+                    JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(0);
 
                     inicial.setText(productObject.getString("inicial"));
                     hpb.setText(productObject.getString("Hp"));
@@ -135,7 +135,7 @@ public class Class4 extends Fragment {
                     max.setText(productObject.getString("Max"));
                     minb.setText(productObject.getString("Min"));
                     Banus.setText(productObject.getString("Banus"));
-                    productObject = jsonArray.getJSONObject(i).getJSONArray("class4").getJSONObject(1);
+                    productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(1);
                     inicialm.setText(productObject.getString("LvMax"));
                     hpm.setText(productObject.getString("Hp"));
                     atkm.setText(productObject.getString("Atk"));
@@ -151,7 +151,7 @@ public class Class4 extends Fragment {
                     JSONObject jsonObject = new JSONObject(content);
                     JSONArray jsonArray = jsonObject.getJSONArray("caracerisicas");
 
-                    JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class4").getJSONObject(0);
+                    JSONObject productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(0);
 
                     inicial.setText(productObject.getString("inicial"));
                     hpb.setText(productObject.getString("Hp"));
@@ -164,7 +164,7 @@ public class Class4 extends Fragment {
                     Mr.setText(productObject.getString("MR"));
 
                     Banus.setText(productObject.getString("Banus"));
-                    productObject = jsonArray.getJSONObject(i).getJSONArray("class4").getJSONObject(1);
+                    productObject = jsonArray.getJSONObject(i).getJSONArray("class2").getJSONObject(1);
                     inicialm.setText(productObject.getString("LvMax"));
                     hpm.setText(productObject.getString("Hp"));
                     atkm.setText(productObject.getString("Atk"));

@@ -42,11 +42,10 @@ public class AdapterCaracter extends ArrayAdapter<Unidades> {
         }
         Unidades product = getItem(position);
 
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.imageViewProduct);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.perfil);
         Picasso.with(context).load(product.getImage()).into(imageView);
 
-        TextView txtName = (TextView) convertView.findViewById(R.id.Nombre);
-        txtName.setText(product.getName());
+
 
 
         return convertView;
